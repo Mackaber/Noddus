@@ -30,6 +30,6 @@
   <% @user.vacantes.each do |v| %>
       <h3><a href="/vacantes/<%= v.id %>"><%= v.titulo %></a></h3>
       <h4><%= v.descripcion %></h4>
-      <h4><%= v.tag_list %></h4>
+      <h4><%= raw v.tag_list[0..2].map { |t| link_to t, tag_vacantes_path(t) }.join(', ') %></h4>
   <% end%>
 </div>

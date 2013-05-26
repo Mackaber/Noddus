@@ -12,7 +12,11 @@
   <% @empresas.each do |e| %>
       <tr>
         <td style="width:0.5px;background-color:deepskyblue;"></td>
-        <td><h3><a href="/empresas/<%= e.id %>"><%= e.nombre %></a></h3></td>
+        <% if e.nombre %>
+            <td><h3><a href="/empresas/<%= e.id %>"><%= e.nombre %></a></h3></td>
+        <% else %>
+            <td><h3><a href="/empresas/<%= e.id %>"><%= e.email %></a></h3></td>
+        <% end %>
         <td style="margin-top: 20px"><%= e.perfil %></td>
       </tr>
   <% end %>

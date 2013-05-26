@@ -37,5 +37,9 @@
       <%= f.label :termina, "Fin", :class => "span3" %>
       <%= f.date_select(:termina,{},{ :style => "width:70px;"})%>
     </div>
+    <div class="field">
+      <%= f.label :tag_list, "Habilidades (SELECCIONA 3)",:class => "span3"  %>
+      <%= f.collection_select :tag_list, Skill.order(:name) ,:name,:name, {:class => "edit-select span3"}, {multiple: true} %>
+    </div>
     <div><%= f.submit "Terminar", :class => "btn" %></div>
 <% end %>

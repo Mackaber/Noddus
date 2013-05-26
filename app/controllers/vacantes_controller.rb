@@ -2,8 +2,11 @@ class VacantesController < ApplicationController
   # GET /vacantes
   # GET /vacantes.json
   def index
-    @vacantes = Vacante.all
-
+    if params[:tag]
+      @vacantes = Vacante.tagged_with(params[:tag])
+    else
+      @vacantes = Vacante.all
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @vacantes }
