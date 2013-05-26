@@ -41,6 +41,7 @@ class VacantesController < ApplicationController
   # POST /vacantes.json
   def create
     @vacante = Vacante.new(params[:vacante])
+    @vacante.user_id = current_user.id
 
     respond_to do |format|
       if @vacante.save

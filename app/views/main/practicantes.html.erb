@@ -24,7 +24,7 @@
             <% else %>
                 <td><h3><a href="/practicantes/<%= u.id %>"><%= u.email %></a></h3></td>
             <% end %>
-            <td style="margin-top: 20px"><%= raw u..tag_list[0..2].map { |t| link_to t, tag_path(t) }.join(', ') %></td>
+            <td style="margin-top: 20px"><%= raw u.tag_list[0..2].map { |t| link_to t, tag_path(t) }.join(', ') %></td>
         </tr>
     <% end %>
     </tbody>
