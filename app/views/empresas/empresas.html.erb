@@ -1,0 +1,20 @@
+<% @page = "none" %>
+<%= link_to image_tag("logo_noddus.png"), "/" %>
+<h1 class="bluefont" style="margin-left: .4px"><a href="/empresas" style="text-decoration: none;color:#999;">Empresas</a></h1>
+<br>
+<table class="table">
+  <thead>
+  <!--<tr>-->
+  <!--<th>Nombre</th>-->
+  <!--</tr>-->
+  </thead>
+  <tbody>
+  <% @empresas.each do |e| %>
+      <tr>
+        <td style="width:0.5px;background-color:deepskyblue;"></td>
+        <td><h3><a href="/empresas/<%= e.id %>"><%= e.nombre %></a></h3></td>
+        <td style="margin-top: 20px"><%= e.perfil %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

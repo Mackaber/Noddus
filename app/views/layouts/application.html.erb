@@ -8,24 +8,31 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body style="background-image: url('<%= if @page = "main" then 'assets/background.jpg' end %>');">
+<body style="background-image: url('<%= if @page == "main" then 'assets/background.jpg' end %>');background-size: 100%;background-repeat: no-repeat">
 <div class="bluebox span2 offset1" >
-  <% if current_user %><ul class="nav pull-right">
+  <% if current_user %>
+      <ul class="nav pull-right">
       <li id="fat-menu" class="dropdown">
-        <!--<div>-->
         <% if current_user.imagen %>
-            <%= link_to image_tag(current_user.imagen, :border => 0, :class => "span1") %>
+            <div class="span1">
+                <%= link_to image_tag(current_user.imagen, :border => 0, :class => "span1", :style => "width: 22px;position: absolute;margin-left: -68px;") %>
+            </div>
         <% end %>
-        <a href="#" id="drop1" role="button" class="dropdown-toggle" data-toggle="dropdown" style="position: absolute;margin-left: -100px;">
-          <%= current_user.nombre %> &nbsp; <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="drop1">
-          <li><%= link_to "Editar Perfil", edit_user_registration_path %></li>
-          <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></li>
+            <div>
+                <a href="#" id="drop1" role="button" class="bluefont dropdown-toggle" data-toggle="dropdown" style="position: absolute;margin-left: -100px;">
+                  <% if current_user.nombre %>
+                    <%= current_user.nombre %> &nbsp; <b class="bluefont caret"></b>
+                  <% else %>
+                    <div style="margin-left: -43px;font-size: 14px;"> <%= current_user.email %> &nbsp; <b class="bluefont caret"></b></div>
+                  <% end %>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="drop1">
+                  <li><%= link_to "Editar Perfil", edit_user_registration_path %></li>
+                  <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></li>
+                </ul>
+            </div>
+          </li>
         </ul>
-        <!--</div>-->
-      </li>
-      </ul>
 
   <% else %>
       <%= render "layouts/modal" %>

@@ -1,15 +1,15 @@
-class MainController < ApplicationController
+class EmpresasController < ApplicationController
   def index
     respond_to do |format|
       format.html # index.html.erb
     end
   end
 
-  def practicantes
+  def empresas
     if params[:tag]
-      @users = User.where("rol = 'Practicante'").tagged_with(params[:tag])
+      @empresas = User.where("rol = 'Empresa'").tagged_with(params[:tag])
     else
-      @users = User.where("rol = 'Practicante'")
+      @empresas = User.where("rol = 'Empresa'")
     end
 
     respond_to do |format|
@@ -18,12 +18,11 @@ class MainController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @empresas = User.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @user }
+      format.json { render json: @empresas }
     end
   end
-
 end

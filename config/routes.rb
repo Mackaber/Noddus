@@ -1,7 +1,13 @@
 Noddus::Application.routes.draw do
 
   resources :vacantes
+  match '/practicantes/:id' => 'main#show'
+  match '/practicantes' => 'main#practicantes'
 
+  match '/empresas/:id' => 'empresas#show'
+  match '/empresas' => 'empresas#empresas'
+
+  get 'tags/:tag', to: 'main#practicantes', as: :tag
 
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", registrations: "registrations"} do
     get '/users/sign_in' => 'devise/sessions#create'

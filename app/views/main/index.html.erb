@@ -2,14 +2,14 @@
 
 <div>
   <div class="row-fluid">
-    <%= link_to image_tag("logo_noddus.png") %>
+    <%= link_to image_tag("logo_noddus.png"), "/" %>
     <p>
       <%= image_tag "text.png", :style => "margin: 75px;" %>
     </p>
     <div style="margin-top: -50px;margin-left: 235px;">
-      <%= link_to image_tag("practi_off.png"), :type => "button" %>
-      <%= link_to image_tag("vacan_off.png"), :type => "button" %>
-      <%= link_to image_tag("empre_off.png"), :type => "button" %>
+      <%= link_to image_tag("practi_off.png"), "/practicantes", :type => "button"  %>
+      <%= link_to image_tag("vacan_off.png"), "/vacantes", :type => "button" %>
+      <%= link_to image_tag("empre_off.png"), "/empresas", :type => "button" %>
     </div>
   </div>
 </div>

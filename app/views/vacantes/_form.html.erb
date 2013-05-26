@@ -28,8 +28,12 @@
     <%= f.text_field :perfil %>
   </div>
   <div class="field">
-    <%= f.label :vistas %><br />
-    <%= f.number_field :vistas %>
+    <%= f.label :inicia %><br />
+    <%= f.date_select :inicia %>
+  </div>
+  <div class="field">
+    <%= f.label :termina %><br />
+    <%= f.date_select :termina %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -5,11 +5,14 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable #, :confirmable
 
+  acts_as_taggable # :habilidades
+
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email,:nombre,:cumpleanos,:escuela,:carrera,:ingles_prc,:idioma,:idioma_prc,:genero,:ubicacion,
+  attr_accessible :email,:nombre,:cumpleanos,:escuela,:carrera,:ingles_prc,:idioma,:idioma_prc,:genero,:ubicacion, :tag_list, :password, :password_confirmation,
                   :telefono,:skype,:google_prof,:imagen,:twitter,:facebook,:avance_car, :link_video, :perfil,:descripcion,:sitio_web,:uid,:rol,:status
 
   # attr_accessible :title, :body
+  has_many :vacantes
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
@@ -22,6 +25,7 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       user.nombre = auth.info.first_name
       user.imagen = auth.info.image
+      user.rol = "Practicante"
       #---------------------------------------
       user.ubicacion = auth.extra.raw_info.location
       user.cumpleanos = auth.extra.raw_info.birthday

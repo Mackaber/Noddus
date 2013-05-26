@@ -1,31 +1,31 @@
-<h1>Listing vacantes</h1>
-
-<table>
-  <tr>
-    <th>Descripcion</th>
-    <th>Titulo</th>
-    <th>Area</th>
-    <th>Perfil</th>
-    <th>Vistas</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @vacantes.each do |vacante| %>
-  <tr>
-    <td><%= vacante.descripcion %></td>
-    <td><%= vacante.titulo %></td>
-    <td><%= vacante.area %></td>
-    <td><%= vacante.perfil %></td>
-    <td><%= vacante.vistas %></td>
-    <td><%= link_to 'Show', vacante %></td>
-    <td><%= link_to 'Edit', edit_vacante_path(vacante) %></td>
-    <td><%= link_to 'Destroy', vacante, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% @page = "none" %>
+<%= link_to image_tag("logo_noddus.png"), "/" %>
+<h1 class="bluefont" style="margin-left: .4px"><a href="/vacantes" style="text-decoration: none;color:#999;">Vacantes</a></h1>
+<div class="pull-right"><a href="/vacantes/new" class="bluefont" style="color:#999999;">Nueva Vacante +</a></div>
+<div id="tag_cloud" style="width: 80%;">
+<% tag_cloud User.tag_counts, %w{s m l} do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
 <% end %>
+</div>
+<br>
+<table class="table">
+  <thead>
+  <!--<tr>-->
+  <!--<th>Nombre</th>-->
+  <!--</tr>-->
+  </thead>
+  <tbody>
+  <% @vacantes.each do |v| %>
+      <tr onmouseover="">
+        <div class="hidden"><%= v.status %></div>
+        <td style="width:0.5px;background-color: <%= if v.status == 'disponible' then 'green' else 'red' end %>;"></td>
+        <td><h3><a href="/vacantes/<%= v.id %>"><%= v.titulo %></a></h3></td>
+        <td style="margin-top: 20px"><%= raw v.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></td>
+        <% if current_user.rol == 'Empresa' %>
+            <td><%= link_to 'Editar Vacante', edit_vacante_path(v) %></td>
+            <td><%= link_to 'Destruir Vacante', v, method: :delete, data: { confirm: '¿Esta Seguro?' } %></td>
+        <% end %>
+      </tr>
+  <% end %>
+  </tbody>
 </table>
-
-<br />
-
-<%= link_to 'New Vacante', new_vacante_path %>

@@ -1,0 +1,27 @@
+<% @page = "none" %>
+<%= link_to image_tag("logo_noddus.png"), "/" %>
+<h1 class="bluefont" style="margin-left: .4px"><a href="/practicantes" style="text-decoration: none;color:#999;">Practicantes</a></h1>
+<br>
+<div id="tag_cloud" style="width: 80%;">
+  <% tag_cloud User.tag_counts, %w{s m l} do |tag, css_class| %>
+      <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
+<br>
+<table class="table">
+    <thead>
+        <!--<tr>-->
+            <!--<th>Nombre</th>-->
+        <!--</tr>-->
+    </thead>
+    <tbody>
+    <% @users.each do |u| %>
+        <tr onmouseover="">
+            <div class="hidden"><%= u.status %></div>
+            <td style="width:0.5px;background-color: <%= if u.status == 'disponible' then 'green' else 'red' end %>;"></td>
+            <td><h3><a href="/practicantes/<%= u.id %>"><%= u.nombre %></a></h3></td>
+            <td style="margin-top: 20px"><%= raw u.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>

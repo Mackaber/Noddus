@@ -6,86 +6,117 @@
         <%= devise_error_messages! %>
         <%= flash[:notice] %>
         <br>
-
+        <!-- COINCIDE -->
         <div class="field">
           <%= f.label :email, "Email", :class => "span3" %>
           <%= f.email_field :email, :autofocus => true, :class => "span3", :placeholder => "cosme@mai.com" %>
         </div>
 
-        <!--Campos para llenar-->
+        <!-- COINCIDE -->
         <div class="field">
           <%= f.label :nombre, "Nombre", :class => "span3" %>
           <%= f.text_field :nombre, :value => current_user.nombre, :class => "span3",:placeholder => "Cosme" %>
         </div>
-
+        <!-- COINCIDE -->
         <div class="field">
           <%= f.label :telefono, "Teléfono", :class => "span3" %>
           <%= f.text_field :telefono, :value => current_user.telefono, :class => "span3", :placeholder => "0-00-00-00" %>
         </div>
-        <div class="field">
-          <%= f.label :cumpleanos, "Fecha de Nacimiento", :class => "span3" %>
-          <%= f.date_select(:cumpleanos,{:start_year => 1940, :end_year => 2001},{ :style => "width:70px;",:value => current_user.cumpleanos}) %>
-        </div>
+        <!-- COINCIDE -->
         <div class="field">
           <%= f.label :ubicacion, "Ciudad y Estado", :class => "span3" %>
           <%= f.text_field :ubicacion, :value => current_user.ubicacion, :class => "span3", :placeholder => "Ciudad, Estado"%>
         </div>
-        <div class="field">
-          <%= f.label :genero, "Género", :class => "span3" %>
-          <%= f.select :genero, options_for_select([["Hombre", "male"], ["Mujer", "female"]],:selected => current_user.genero), :class => "edit-select span3" %>
-        </div>
-        <div class="field">
-          <%= f.label :escuela, "Universidad", :class => "span3" %>
-          <%= f.text_field :escuela, :value => current_user.escuela, :class => "edit-select span3" %>
-        </div>
-        <div class="field">
-          <%= f.label :carrera, "Carrera", :class => "span3" %>
-          <%= f.text_field :carrera,  :value => current_user.carrera, :class => "edit-select span3" %>
-        </div>
+        <!--TODO: corregir esta cosa-->
+        <!--Me rindo, si queda tiempo al final lo hago-->
+        <!-- COINCIDE -->
         <div class="field">
           <%= f.label :descripcion, "Cuentanos de ti", :class => "span3" %>
           <%= f.text_area :descripcion, :value => current_user.descripcion, :class => "span3", :rows => "8" %>
         </div>
+        <!-- COINCIDE -->
         <div class="field">
           <%= f.label :sitio_web, "Sitio Web", :class => "span3" %>
           <%= f.text_field :sitio_web, :value => current_user.sitio_web, :class => "span3" %>
         </div>
+        <!-- COINCIDE -->
         <div class="field">
           <%= f.label :skype, "Skype", :class => "span3" %>
           <%= f.text_field :skype, :value => current_user.skype, :class => "span3" %>
         </div>
+        <!-- COINCIDE -->
         <div class="field">
           <%= f.label :facebook, "Facebook", :class => "span3" %>
           <%= f.text_field :facebook, :value => current_user.facebook, :class => "span3" %>
         </div>
+        <!-- COINCIDE -->
         <div class="field">
           <%= f.label :twitter, "Twitter", :class => "span3" %>
           <%= f.text_field :twitter, :value => current_user.twitter, :class => "span3" %>
         </div>
+        <!-- COINCIDE -->
         <div class="field">
           <%= f.label :google_prof, "Google+", :class => "span3" %>
           <%= f.text_field :google_prof, :value => current_user.google_prof, :class => "span3" %>
         </div>
-        <div class="field">
-          <%= f.label :avance_car, "Avance en la carrera", :class => "span3" %>
-          <%= f.select :avance_car, options_for_select([["Comenzando", "begginer"], ["Intermedio", "intermediate"], ["Avanzado", "advanced"]],:selected => current_user.avance_car), :class => "edit-select span3" %>
-        </div>
-        <div class="field">
-          <%= f.label :ingles_prc, "% de ingles", :class => "span3" %>
-          <%= f.select :ingles_prc, options_for_select([["0%-10%"], ["11%-20%"], ["21%-30%"], ["31%-40%"],["41%-50%"],["51%-60%"],["61%-70%"],["71%-80%"],["81%-90%"],["91%-100%"]],:selected => current_user.ingles_prc), :class => "edit-select span3" %>
-        </div>
-        <div class="field">
-          <%= f.label :idioma, "Otro idioma", :class => "span3" %>
-          <%= f.text_field :idioma, :value => current_user.idioma, :class => "span3" %>
-        </div>
-        <div class="field">
-          <%= f.label :idioma_prc, "% de otro idioma", :class => "span3" %>
-          <%= f.select :idioma_prc, options_for_select([["0%-10%"], ["11%-20%"], ["21%-30%"], ["31%-40%"],["41%-50%"],["51%-60%"],["61%-70%"],["71%-80%"],["81%-90%"],["91%-100%"]],:selected => current_user.idioma_prc), :class => "edit-select span3" %>
-        </div>
-        <div class="field">
-          <%= f.label :perfil, "TIpo de empresa", :class => "span3" %>
-          <%= f.select :perfil, options_for_select([["Comercial", "marketing"], ["De servicios", "services"], ["Manufacturera", "manufacturing"]],:selected => current_user.perfil), :class => "edit-select span3" %>
-        </div>
+
+        <% if current_user.rol == 'Practicante' %>
+            <div class="field">
+              <%= f.label :tag_list, "Habilidades",:class => "span3"  %>
+              <%= f.collection_select :tag_list, Skill.order(:name) ,:name,:name, {:class => "edit-select span3"}, {multiple: true} %>
+            </div>
+            <br>
+            <!-- SOLO ESTUDIANTE -->
+            <div class="field">
+              <%= f.label :genero, "Género", :class => "span3" %>
+              <%= f.select :genero, options_for_select([["Hombre", "male"], ["Mujer", "female"]],:selected => current_user.genero), :class => "edit-select span3" %>
+            </div>
+            <!-- SOLO ESTUDIANTE -->
+            <div class="field">
+              <%= f.label :escuela, "Universidad", :class => "span3" %>
+              <%= f.text_field :escuela, :value => current_user.escuela, :class => "edit-select span3" %>
+            </div>
+            <!-- SOLO ESTUDIANTE -->
+            <div class="field">
+              <%= f.label :carrera, "Carrera", :class => "span3" %>
+              <%= f.text_field :carrera,  :value => current_user.carrera, :class => "edit-select span3" %>
+            </div>
+            <!-- SOLO ESTUDIANTE -->
+            <div class="field">
+              <%= f.label :cumpleanos, "Fecha de Nacimiento", :class => "span3" %>
+              <%= f.date_select(:cumpleanos,{:start_year => 1940, :end_year => 2001},{ :style => "width:70px;",:value => current_user.cumpleanos}) %>
+            </div>
+            <!-- SOLO ESTUDIANTE -->
+            <div class="field">
+              <%= f.label :avance_car, "Avance en la carrera", :class => "span3" %>
+              <%= f.select :avance_car, options_for_select([["Comenzando", "begginer"], ["Intermedio", "intermediate"], ["Avanzado", "advanced"]],:selected => current_user.avance_car), :class => "edit-select span3" %>
+            </div>
+            <!-- SOLO ESTUDIANTE -->
+            <div class="field">
+              <%= f.label :ingles_prc, "% de ingles", :class => "span3" %>
+              <%= f.select :ingles_prc, options_for_select([["0%-10%"], ["11%-20%"], ["21%-30%"], ["31%-40%"],["41%-50%"],["51%-60%"],["61%-70%"],["71%-80%"],["81%-90%"],["91%-100%"]],:selected => current_user.ingles_prc), :class => "edit-select span3" %>
+            </div>
+            <!-- SOLO ESTUDIANTE -->
+            <div class="field">
+              <%= f.label :idioma, "Otro idioma", :class => "span3" %>
+              <%= f.text_field :idioma, :value => current_user.idioma, :class => "span3" %>
+            </div>
+            <!-- SOLO ESTUDIANTE -->
+            <div class="field">
+              <%= f.label :idioma_prc, "% de otro idioma", :class => "span3" %>
+              <%= f.select :idioma_prc, options_for_select([["0%-10%"], ["11%-20%"], ["21%-30%"], ["31%-40%"],["41%-50%"],["51%-60%"],["61%-70%"],["71%-80%"],["81%-90%"],["91%-100%"]],:selected => current_user.idioma_prc), :class => "edit-select span3" %>
+            </div>
+
+        <% else %>
+
+            <!-- SOLO empresa -->
+            <div class="field">
+              <%= f.label :perfil, "TIpo de empresa", :class => "span3" %>
+              <%= f.select :perfil, options_for_select([["Comercial", "marketing"], ["De servicios", "services"], ["Manufacturera", "manufacturing"]],:selected => current_user.perfil), :class => "edit-select span3" %>
+            </div>
+
+        <% end %>
+
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
@@ -95,7 +126,7 @@
               <%= f.label :password, "Contraseña (Déjalo en blanco si no quieres cambiarla)",:class => "span3" %>
               <%= f.password_field :password, :autocomplete => "off", :class => "span3" %>
             </div>
-
+             <br>
             <div class="field">
               <%= f.label :password_confirmation, "Confirma tu contraseña", :class => "span3" %>
               <%= f.password_field :password_confirmation, :class => "span3" %>

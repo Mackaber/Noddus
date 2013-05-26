@@ -6,6 +6,10 @@
   <div><%= f.label :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>
 
+  <div><%= f.label :rol %><br />
+  <%= f.select :rol, options_for_select([["Practicante"], ["Empresa"]]), :class => "edit-select span3" %>
+  </div>
+
   <div><%= f.label :password %><br />
   <%= f.password_field :password %></div>
 
