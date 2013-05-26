@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="83730626-8586-450a-ad85-a6da8e08ab02" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/vacantes/index.html.erb" afterPath="$PROJECT_DIR$/app/views/vacantes/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main/practicantes.html.erb" afterPath="$PROJECT_DIR$/app/views/main/practicantes.html.erb" />
     </list>
     <ignored path="Noddus.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -18,7 +17,7 @@
     <file path="/user.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369588604326" ignored="false" />
     <file path="/application.html.erb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369593805962" ignored="false" />
     <file path="/application.css" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369559280641" ignored="false" />
-    <file path="/index.html.erb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369594675604" ignored="false" />
+    <file path="/index.html.erb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369594887998" ignored="false" />
     <file path="/application_helper.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369515973727" ignored="false" />
     <file path="/_modal.html.erb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369520684496" ignored="false" />
     <file path="/sessions_controller.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369530795932" ignored="false" />
@@ -42,7 +41,7 @@
     <file path="/20130526134729_add_indexto_vacantes.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369576212370" ignored="false" />
     <file path="/20130526135141_correct_index.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369576373199" ignored="false" />
     <file path="/vacantes_controller.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369593437143" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369594676027" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369594893086" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,8 +111,10 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/vacantes/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="89" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.2026578">
-              <folding />
+            <state line="10" column="38" selection-start="550" selection-end="550" vertical-scroll-proportion="0.49833888">
+              <folding>
+                <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1252,8 +1253,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/vacantes/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="89" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.2026578">
-          <folding />
+        <state line="10" column="38" selection-start="550" selection-end="550" vertical-scroll-proportion="0.49833888">
+          <folding>
+            <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
