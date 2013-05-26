@@ -1,1 +1,35 @@
-Cosas que me dan flojera y ahorita hago
+<% @page = "none" %>
+<%= link_to image_tag("logo_noddus.png"), "/" %>
+<br>
+<br>
+<div class="span4">
+  <% if @user.imagen %>
+      <%= image_tag( @user.imagen, :style => "width:280px") %>
+  <% else %>
+      <%= image_tag("foto_perfil.gif") %>
+  <% end %>
+  <br>
+</div>
+<div style="color: #636363;text-align: right" class="bluefont">
+  <h1><%= @user.nombre.upcase %></h1>
+  <h4><%= @user.perfil %></h4>
+  <h4><%= @user.email %></h4>
+  <br>
+  <br>
+  <h4><%= @user.ubicacion %></h4>
+  <h4><%= @user.escuela %></h4>
+  <h4><%= @user.skype %></h4>
+  <h4><%= @user.sitio_web %></h4>
+  <h4>Tel. <%= @user.telefono %></h4>
+  <br>
+  <br>
+  <h1>DESCRIPCIÓN</h1>
+  <h4><%= @user.descripcion %></h4>
+  <br>
+  <h1>MIS VACANTES</h1>
+  <% @user.vacantes.each do |v| %>
+      <h3><a href="/vacantes/<%= v.id %>"><%= v.titulo %></a></h3>
+      <h4><%= v.descripcion %></h4>
+      <h4><%= v.tag_list %></h4>
+  <% end%>
+</div>

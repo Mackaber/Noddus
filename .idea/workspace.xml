@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="83730626-8586-450a-ad85-a6da8e08ab02" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/vacantes/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/vacantes/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main/practicantes.html.erb" afterPath="$PROJECT_DIR$/app/views/main/practicantes.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/vacantes_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/vacantes_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/empresas_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/empresas_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/vacantes/index.html.erb" afterPath="$PROJECT_DIR$/app/views/vacantes/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/empresas/show.html.erb" afterPath="$PROJECT_DIR$/app/views/empresas/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/vacante.rb" afterPath="$PROJECT_DIR$/app/models/vacante.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Noddus.iws" />
@@ -21,7 +22,7 @@
     <file path="/user.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369588604326" ignored="false" />
     <file path="/application.html.erb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369551754812" ignored="false" />
     <file path="/application.css" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369559280641" ignored="false" />
-    <file path="/index.html.erb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369580889742" ignored="false" />
+    <file path="/index.html.erb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369590206747" ignored="false" />
     <file path="/application_helper.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369515973727" ignored="false" />
     <file path="/_modal.html.erb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369520684496" ignored="false" />
     <file path="/sessions_controller.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369530795932" ignored="false" />
@@ -29,18 +30,18 @@
     <file path="/20130525234407_add_roles_andstatus_to_users.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369525711275" ignored="false" />
     <file path="/20130525235457_add_status_and_timeto_vacantes.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369526469027" ignored="false" />
     <file path="/edit.html.erb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369586957225" ignored="false" />
-    <file path="/vacante.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369576269255" ignored="false" />
+    <file path="/vacante.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369589270107" ignored="false" />
     <file path="/omniauth_callbacks_controller.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369568140748" ignored="false" />
     <file path="/devise.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369531116840" ignored="false" />
     <file path="/production.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369534239411" ignored="false" />
-    <file path="/_form.html.erb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369588474755" ignored="false" />
+    <file path="/_form.html.erb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369589869401" ignored="false" />
     <file path="/main_controller.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369569096386" ignored="false" />
     <file path="/practicantes.html.erb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369584318407" ignored="false" />
-    <file path="/Ruby Console" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369588693006" ignored="false" />
+    <file path="/Ruby Console" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369590668599" ignored="false" />
     <file path="/registrations_controller.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369545254845" ignored="false" />
     <file path="/registrations.js.coffee" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369559637667" ignored="false" />
-    <file path="/show.html.erb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369587281039" ignored="false" />
-    <file path="/empresas_controller.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369575567122" ignored="false" />
+    <file path="/show.html.erb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369590534237" ignored="false" />
+    <file path="/empresas_controller.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369590715852" ignored="false" />
     <file path="/empresas.html.erb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369578567682" ignored="false" />
     <file path="/20130526134729_add_indexto_vacantes.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369576212370" ignored="false" />
     <file path="/20130526135141_correct_index.rb" changelist="83730626-8586-450a-ad85-a6da8e08ab02" time="1369576373199" ignored="false" />
@@ -110,59 +111,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/main/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="93" selection-start="350" selection-end="350" vertical-scroll-proportion="-6.875">
-              <folding>
-                <element signature="n#style#0;n#h4#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h4#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/new.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/vacantes/new.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/vacantes/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="11" selection-start="350" selection-end="350" vertical-scroll-proportion="-6.875">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="registrations_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/registrations_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vacantes_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/vacantes_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="78" selection-start="816" selection-end="816" vertical-scroll-proportion="0.0">
+            <state line="37" column="32" selection-start="1275" selection-end="1275" vertical-scroll-proportion="-8.75">
               <folding />
             </state>
           </provider>
@@ -177,19 +129,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vacante.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="vacante.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/vacante.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="2" column="0" selection-start="130" selection-end="148" vertical-scroll-proportion="-1.2">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb">
+      <file leaf-file-name="20130526135141_correct_index.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20130526135141_correct_index.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="17" selection-start="0" selection-end="7778" vertical-scroll-proportion="-6.25">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -199,6 +151,53 @@
         <entry file="file://$PROJECT_DIR$/app/views/vacantes/edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/vacantes/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/empresas/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="6" selection-start="444" selection-end="444" vertical-scroll-proportion="0.49833888">
+              <folding>
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="empresas_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/empresas_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="5" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/main/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="43" selection-start="0" selection-end="1028" vertical-scroll-proportion="-4.375">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/vacantes/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="73" selection-start="1224" selection-end="1224" vertical-scroll-proportion="-3.7916667">
               <folding />
             </state>
           </provider>
@@ -226,22 +225,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/empresas_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/empresas/show.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20130526134729_add_indexto_vacantes.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20130526135141_correct_index.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_modal.html.erb" />
         <option value="$PROJECT_DIR$/app/views/main/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/vacante.rb" />
         <option value="$PROJECT_DIR$/app/views/empresas/empresas.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/vacantes/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/main/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/main/practicantes.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/vacantes/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/vacantes_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/app/models/vacante.rb" />
+        <option value="$PROJECT_DIR$/app/views/vacantes/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/vacantes/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/empresas_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/empresas/show.html.erb" />
       </list>
     </option>
   </component>
@@ -1154,7 +1153,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959481" sideWeight="0.5902669" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959481" sideWeight="0.5902669" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41167194" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -1233,58 +1232,7 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/vacantes/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="35" selection-start="407" selection-end="407" vertical-scroll-proportion="-4.375">
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#h1#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/omniauth_callbacks_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/empresas_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="47" selection-start="191" selection-end="220" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/main/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="56" selection-start="513" selection-end="513" vertical-scroll-proportion="-8.75">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/registrations_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/vacantes/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
@@ -1298,17 +1246,6 @@
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/main/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="93" selection-start="350" selection-end="350" vertical-scroll-proportion="-6.875">
-          <folding>
-            <element signature="n#style#0;n#h4#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1334,16 +1271,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/vacantes/_form.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/vacantes_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="11" selection-start="350" selection-end="350" vertical-scroll-proportion="-6.875">
+        <state line="41" column="78" selection-start="816" selection-end="816" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/vacantes_controller.rb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20130526135141_correct_index.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="78" selection-start="816" selection-end="816" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1357,8 +1294,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/vacante.rb">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="130" selection-end="148" vertical-scroll-proportion="-1.2">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/vacantes/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="32" selection-start="1275" selection-end="1275" vertical-scroll-proportion="-8.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/vacantes/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/vacantes/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="73" selection-start="1224" selection-end="1224" vertical-scroll-proportion="-3.7916667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/vacantes/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/main/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="43" selection-start="0" selection-end="1028" vertical-scroll-proportion="-4.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/empresas_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="5" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/empresas/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="6" selection-start="444" selection-end="444" vertical-scroll-proportion="0.49833888">
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

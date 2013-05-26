@@ -1,40 +1,41 @@
 <%= form_for(@vacante) do |f| %>
-  <% if @vacante.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@vacante.errors.count, "error") %> prohibited this vacante from being saved:</h2>
+    <% if @vacante.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@vacante.errors.count, "error") %> prohibited this vacante from being saved:</h2>
 
-      <ul>
-      <% @vacante.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @vacante.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+
+    <div class="field">
+      <%= f.label :descripcion, "Descripción", :class => "span3" %>
+      <%= f.text_area :descripcion, :class => "span3", :rows => "5" %>
     </div>
-  <% end %>
-  <div class="field">
-    <%= f.label :descripcion %><br />
-    <%= f.text_area :descripcion %>
-  </div>
-  <div class="field">
-    <%= f.label :titulo %><br />
-    <%= f.text_field :titulo %>
-  </div>
-  <div class="field">
-    <%= f.label :area %><br />
-    <%= f.text_field :area %>
-  </div>
-  <div class="field">
-    <%= f.label :perfil %><br />
-    <%= f.text_field :perfil %>
-  </div>
-  <div class="field">
-    <%= f.label :inicia %><br />
-    <%= f.date_select :inicia %>
-  </div>
-  <div class="field">
-    <%= f.label :termina %><br />
-    <%= f.date_select :termina %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="field">
+      <%= f.label :titulo, "Titulo", :class => "span3" %>
+      <%= f.text_field :titulo, :class => "span3" %>
+    </div>
+    <div class="field">
+      <%= f.label :area, "Area", :class => "span3" %>
+      <%= f.text_field :area, :class => "span3" %>
+    </div>
+    <div class="field">
+      <%= f.label :perfil, "Perfil", :class => "span3" %>
+      <%= f.text_field :perfil, :class => "span3" %>
+    </div>
+    <div class="field">
+      <%= f.label :inicia, "Inicio", :class => "span3" %>
+      <%= f.date_select(:inicia,{},{ :style => "width:70px;"}) %>
+
+    </div>
+    <div class="field">
+      <%= f.label :termina, "Fin", :class => "span3" %>
+      <%= f.date_select(:termina,{},{ :style => "width:70px;"})%>
+    </div>
+    <div><%= f.submit "Terminar", :class => "btn" %></div>
 <% end %>

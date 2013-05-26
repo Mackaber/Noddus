@@ -26,7 +26,7 @@
         <td><h3><a href="/vacantes/<%= v.id %>"><%= v.titulo %></a></h3></td>
         <td style="margin-top: 20px"><%= raw v.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></td>
         <% if current_user %>
-            <% if current_user.rol == 'Empresa' %>
+            <% if current_user.rol == 'Empresa' && (current_user.vacantes.include? v.id ) %>
                 <td><%= link_to 'Editar Vacante', edit_vacante_path(v) %></td>
                 <td><%= link_to 'Destruir Vacante', v, method: :delete, data: { confirm: '¿Esta Seguro?' } %></td>
             <% end %>
