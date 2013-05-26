@@ -31,7 +31,11 @@
         <!--Me rindo, si queda tiempo al final lo hago-->
         <!-- COINCIDE -->
         <div class="field">
-          <%= f.label :descripcion, "Cuentanos de ti", :class => "span3" %>
+          <% if current_user.rol == 'Practicante' %>
+            <%= f.label :descripcion, "Presentación", :class => "span3" %>
+          <% else %>
+            <%= f.label :descripcion, "Descripción", :class => "span3" %>
+          <% end %>
           <%= f.text_area :descripcion, :value => current_user.descripcion, :class => "span3", :rows => "8" %>
         </div>
         <!-- COINCIDE -->
@@ -62,7 +66,7 @@
 
         <% if current_user.rol == 'Practicante' %>
             <div class="field">
-              <%= f.label :tag_list, "Habilidades",:class => "span3"  %>
+              <%= f.label :tag_list, "Habilidades (SELECCIONA 3)",:class => "span3"  %>
               <%= f.collection_select :tag_list, Skill.order(:name) ,:name,:name, {:class => "edit-select span3"}, {multiple: true} %>
             </div>
             <br>

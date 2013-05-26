@@ -1,48 +1,32 @@
 <% @page = "none" %>
 <%= link_to image_tag("logo_noddus.png"), "/" %>
-<div class="hero-unit">
-    <h1 class="bluefont" style="color:#999"><%= @user.nombre %></h1>
-    <%= @user.imagen %>
-    <br>
-    <div class="bluefont" style="color:#636363;font-size: 20px">
-        <p style="color:#313131">Edad</p>
-        <p style="margin-left: 20px"><%= Time.now.year - @user.cumpleanos.year  %></p>
-        <p style="color:#313131">Género</p>
-        <p style="margin-left: 20px"><%= @user.genero %></p>
-        <p style="color:#313131">Ubicación</p>
-        <p style="margin-left: 20px"><%= @user.ubicacion  %></p>
-        <p style="color:#313131">Descripción</p>
-        <p style="margin-left: 20px"><%= @user.descripcion  %></p>
-        <hr>
-        <p style="color:#313131">Perfil</p>
-        <p style="margin-left: 20px"><%= @user.perfil  %></p>
-        <p style="color:#313131">Escuela</p>
-        <p style="margin-left: 20px"><%= @user.escuela  %></p>
-        <p style="color:#313131">Carrera</p>
-        <p style="margin-left: 20px"><%= @user.carrera  %></p>
-        <p style="color:#313131">Avance de la Carrera</p>
-        <p style="margin-left: 20px"><%= @user.avance_car  %></p>
-        <hr>
-        <p style="color:#313131">Porcentaje de Inglés</p>
-        <p style="margin-left: 20px"><%= @user.ingles_prc  %></p>
-        <p style="color:#313131">Idioma Alterno</p>
-        <p style="margin-left: 20px"><%=  @user.idioma  %></p>
-        <p style="color:#313131">Porcentaje de Idioma Alterno</p>
-        <p style="margin-left: 20px"><%= @user.idioma_prc  %></p>
-        <hr>
-        <p style="color:#313131">Telefono</p>
-        <p style="margin-left: 20px"><%= @user.telefono  %></p>
-        <p style="color:#313131">Skype</p>
-        <p style="margin-left: 20px"><%= @user.skype  %></p>
-        <p style="color:#313131">Google+</p>
-        <p style="margin-left: 20px"><%= @user.google_prof  %></p>
-        <p style="color:#313131">Twitter</p>
-        <p style="margin-left: 20px"><%= @user.twitter  %></p>
-        <p style="color:#313131">Facebook</p>
-        <p style="margin-left: 20px"><%= @user.facebook  %></p>
-        <p style="color:#313131">Twitter</p>
-        <p style="margin-left: 20px"><%= @user.twitter  %></p>
-        <p style="color:#313131">Sitio Web</p>
-        <p style="margin-left: 20px"><%= @user.sitio_web  %></p>
-    </div>
+<br>
+<br>
+<div class="span4">
+  <% if @user.imagen %>
+    <%= image_tag( @user.imagen, :style => "width:280px") %>
+  <% else %>
+    <%= image_tag("foto_perfil.gif") %>
+  <% end %>
+  <br>
+  <h4 style="color: #636363;" class="bluefont">Porcentaje de Inglés <%= @user.ingles_prc %></h4>
+  <h4 style="color: #636363;" class="bluefont">Otro idioma: <%= @user.idioma %>: <%= @user.idioma_prc %></h4>
+</div>
+<div style="color: #636363;text-align: right" class="bluefont">
+  <h1><%= @user.nombre.upcase %></h1>
+  <h4><%= @user.carrera %></h4>
+  <h4><%= @user.email %></h4>
+  <br>
+  <br>
+  <h4><%= if @user.genero == 'male' then 'Hombre' else 'Mujer' end %></h4>
+  <h4><%= @user.ubicacion %></h4>
+  <h4><%= Time.now.year - @user.cumpleanos.year %></h4>
+  <h4><%= @user.escuela %></h4>
+  <h4><%= @user.skype %></h4>
+  <h4><%= @user.sitio_web %></h4>
+  <h4>Tel. <%= @user.telefono %></h4>
+  <br>
+  <br>
+  <h1>PRESENTACIÓN</h1>
+  <h4><%= @user.descripcion %></h4>
 </div>
