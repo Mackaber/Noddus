@@ -1,0 +1,16 @@
+<div id="myModal" style="width: 670px;margin-left: -340px;" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Registro/Entrar</h3>
+  </div>
+  <div class="modal-body">
+    <div class="span4"><%= render :file => 'devise/registrations/new' %></div>
+    <div class="span4"><%= render :file => 'devise/sessions/new' %></div>
+  </div>
+  <div class="modal-footer">
+    <a href="users/auth/facebook">
+      <button class="zocial facebook" style="font-size: 13px;">
+        Registrate con Facebook
+      </button></a>
+  </div>
+</div>

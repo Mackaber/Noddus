@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @vacante.descripcion %>
+</p>
+
+<p>
+  <b>Titulo:</b>
+  <%= @vacante.titulo %>
+</p>
+
+<p>
+  <b>Area:</b>
+  <%= @vacante.area %>
+</p>
+
+<p>
+  <b>Perfil:</b>
+  <%= @vacante.perfil %>
+</p>
+
+<p>
+  <b>Vistas:</b>
+  <%= @vacante.vistas %>
+</p>
+
+
+<%= link_to 'Edit', edit_vacante_path(@vacante) %> |
+<%= link_to 'Back', vacantes_path %>

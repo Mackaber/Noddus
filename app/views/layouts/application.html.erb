@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Noddus</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body style="background-image: url('<%= if @page = "main" then 'assets/background.jpg' end %>');">
+<div class="bluebox span2 offset1" >
+  <% if current_user %><ul class="nav pull-right">
+      <li id="fat-menu" class="dropdown">
+        <!--<div>-->
+        <% if current_user.imagen %>
+            <%= link_to image_tag(current_user.imagen, :border => 0, :class => "span1") %>
+        <% end %>
+        <a href="#" id="drop1" role="button" class="dropdown-toggle" data-toggle="dropdown" style="position: absolute;margin-left: -100px;">
+          <%= current_user.nombre %> &nbsp; <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="drop1">
+          <li><%= link_to "Editar Perfil", edit_user_registration_path %></li>
+          <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></li>
+        </ul>
+        <!--</div>-->
+      </li>
+      </ul>
+
+  <% else %>
+      <%= render "layouts/modal" %>
+      <a href="#myModal" data-toggle="modal" style="text-align: center;" class="bluefont">Registro/Entrar</a>
+<% end %>
+</div>
+
+
+<div style="margin-right: 100px;" class="pull-right">
+    <div class="bluebox span3" >
+      <%= link_to image_tag("home.png"), "/" %>
+      <a href="/" class="bluefont" >about</a>
+      <a href="/" class="bluefont" >blog</a>
+      <a href="/" class="bluefont" >contacto</a>
+    </div>
+    <div class="graybox span1" style="margin-left: 0px;width: 65px;">
+        <%= link_to image_tag("twitter_off.png", :class => "small-box"), "/" %>
+        <%= link_to image_tag("face_off.png", :class => "small-box"), "/" %>
+        <%= link_to image_tag("connec_off.png", :class => "small-box"), "/" %>
+    </div>
+</div>
+
+<% for i in 0..3  do %>
+<br>
+<% end %>
+
+<div class="container">
+    <%= yield %>
+</div>
+
+</body>
+</html>

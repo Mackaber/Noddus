@@ -1,0 +1,31 @@
+<h1>Listing vacantes</h1>
+
+<table>
+  <tr>
+    <th>Descripcion</th>
+    <th>Titulo</th>
+    <th>Area</th>
+    <th>Perfil</th>
+    <th>Vistas</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @vacantes.each do |vacante| %>
+  <tr>
+    <td><%= vacante.descripcion %></td>
+    <td><%= vacante.titulo %></td>
+    <td><%= vacante.area %></td>
+    <td><%= vacante.perfil %></td>
+    <td><%= vacante.vistas %></td>
+    <td><%= link_to 'Show', vacante %></td>
+    <td><%= link_to 'Edit', edit_vacante_path(vacante) %></td>
+    <td><%= link_to 'Destroy', vacante, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Vacante', new_vacante_path %>

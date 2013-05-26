@@ -1,0 +1,39 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+.bluebox {
+    background-color: #00D1D1;
+    border-radius: 0;
+    border-color: #00D1D1;
+    padding: 7px;
+}
+
+.graybox {
+    background-color: #999999;
+    border-radius: 0;
+    border-color: #999999;
+    padding: 8px;
+}
+
+.small-box {
+    width: 17px;
+}
+
+.bluefont {
+    font-family: 'Titillium Web', sans-serif;
+    text-decoration: none;
+    color: #FFF;
+    margin-left: 25px;
+} :hover {
+    text-decoration: none;
+}
