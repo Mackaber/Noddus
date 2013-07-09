@@ -3,11 +3,7 @@
 <br>
 <br>
 <div class="span4">
-  <% if @user.imagen %>
-      <%= image_tag( @user.imagen, :style => "width:280px") %>
-  <% else %>
-      <%= image_tag("foto_perfil.gif") %>
-  <% end %>
+  <%= show_full_image(@user) %>
   <br>
   <h4 style="color: #636363;" class="bluefont">Porcentaje de Inglés <%= @user.ingles_prc %></h4>
   <h4 style="color: #636363;" class="bluefont">Otro idioma: <%= @user.idioma %>: <%= @user.idioma_prc %></h4>
@@ -21,7 +17,9 @@
   <br>
   <h4><%= if @user.try(:genero) == 'male' then 'Hombre' else 'Mujer' end %></h4>
   <h4><%= @user.try(:ubicacion) %></h4>
-  <h4><%= Time.now.year - @user.try(:cumpleanos).year %></h4>
+  <%if @user.cumpleanos %>
+    <h4><%= Time.now.year - @user.try(:cumpleanos).try(:year) %></h4>
+  <% end %>
   <h4><%= @user.try(:escuela) %></h4>
   <h4><%= @user.try(:skype) %></h4>
   <h4><%= @user.try(:sitio_web) %></h4>

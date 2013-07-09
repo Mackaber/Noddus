@@ -24,7 +24,7 @@
   <% @vacantes.each do |v| %>
       <tr onmouseover="">
         <div class="hidden"><%= v.status %></div>
-        <td style="width:0.5px;background-color: <%= if v.status == 'disponible' then 'green' else 'red' end %>;"></td>
+        <td style="width:0.5px;background-color: <%= if v.status == 'disponible' then 'rgb(22, 162, 22);' else 'red' end %>;"></td>
         <td><h3><a href="/vacantes/<%= v.id %>"><%= v.titulo %></a></h3></td>
         <td style="margin-top: 20px"><%= raw v.tag_list.map { |t| link_to t, tag_vacantes_path(t) }.join(', ') %></td>
         <td>

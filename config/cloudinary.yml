@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: nodd-us
+  api_key: '962687943522645'
+  api_secret: wugx1U_x5wgI5qfpIvXYS3rTh4I
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: nodd-us
+  api_key: '962687943522645'
+  api_secret: wugx1U_x5wgI5qfpIvXYS3rTh4I
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: nodd-us
+  api_key: '962687943522645'
+  api_secret: wugx1U_x5wgI5qfpIvXYS3rTh4I
+  enhance_image_tag: true
+  static_image_support: false

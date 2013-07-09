@@ -3,16 +3,12 @@
 <br>
 <br>
 <div class="span4">
-  <% if @user.imagen %>
-      <%= image_tag( @user.imagen, :style => "width:280px") %>
-  <% else %>
-      <%= image_tag("foto_perfil.gif") %>
-  <% end %>
+  <%= show_full_image(@user) %>
   <br>
 </div>
 <div style="color: #636363;text-align: right" class="bluefont">
   <!--TODO: Igual que con los perfiles, validación y valores default-->
-  <h1><%= @user.try(:nombre).upcase %></h1>
+  <h1><%= @user.try(:nombre).try(:upcase) %></h1>
   <h4><%= @user.try(:perfil) %></h4>
   <h4><%= @user.try(:email) %></h4>
   <br>

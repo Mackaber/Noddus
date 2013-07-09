@@ -10,7 +10,9 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email,:nombre,:cumpleanos,:escuela,:carrera,:ingles_prc,:idioma,:idioma_prc,:genero,:ubicacion, :tag_list, :password, :password_confirmation,
-                  :telefono,:skype,:google_prof,:imagen,:twitter,:facebook,:avance_car, :link_video, :perfil,:descripcion,:sitio_web,:uid,:rol,:status
+                  :telefono,:skype,:google_prof,:imagen,:twitter,:facebook,:avance_car, :link_video, :perfil,:descripcion,:sitio_web,:uid,:rol,:status,:avatar
+
+  mount_uploader :avatar, AvatarUploader
 
   # attr_accessible :title, :body
   def self.from_omniauth(auth)
@@ -27,7 +29,7 @@ class User < ActiveRecord::Base
       user.imagen = auth.info.image.split("?")[0] + "?width=300&height=300"
       user.rol = "Practicante"
       #---------------------------------------
-      user.ubicacion = auth.extra.raw_info.try(:location).name
+      user.ubicacion = auth.extra.raw_info.try(:location).try(:name)
       user.cumpleanos = auth.extra.raw_info.birthday
       user.genero = auth.extra.raw_info.gender
       user.escuela = auth.extra.raw_info.educacion

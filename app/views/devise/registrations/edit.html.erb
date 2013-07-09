@@ -18,6 +18,11 @@
           <%= f.text_field :nombre, :value => current_user.nombre, :class => "span3",:placeholder => "Cosme" %>
         </div>
         <!-- COINCIDE -->
+        <div>
+          <%= f.label :avatar, "Imagen de Perfil", :class => "span3" %>
+          <%= f.file_field :avatar, :class => "span3" %>
+        </div>
+        <!-- COINCIDE -->
         <div class="field">
           <%= f.label :telefono, "Teléfono", :class => "span3" %>
           <%= f.text_field :telefono, :value => current_user.telefono, :class => "span3", :placeholder => "0-00-00-00" %>
