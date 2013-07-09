@@ -12,17 +12,18 @@
   <%= raw @vacante.tag_list[0..2].map { |t| link_to t, tag_vacantes_path(t) }.join(', ') %>
 </div>
 <div style="color: #636363;text-align: right" class="bluefont">
+  <!--TODO: Igual que con los perfiles, validación y valores default-->
   <h1><%= @vacante.titulo.upcase %></h1>
-  <h4><%= @vacante.user.nombre %></h4>
-  <h4><%= @vacante.user.email %></h4>
+  <h4><%= @vacante.try(:user).try(:nombre) %></h4>
+  <h4><%= @vacante.try(:user).try(:email) %></h4>
   <br>
   <br>
-  <h4><%= @vacante.user.ubicacion %></h4>
-  <h4><%= @vacante.user.perfil %></h4>
+  <h4><%= @vacante.try(:user).try(:ubicacion) %></h4>
+  <h4><%= @vacante.try(:user).try(:perfil) %></h4>
   <h4><%= @vacante.inicia %></h4>
   <h4><%= @vacante.termina %></h4>
-  <h4><%= @vacante.user.sitio_web %></h4>
-  <h4>Tel. <%= @vacante.user.telefono %></h4>
+  <h4><%= @vacante.try(:user).try(:sitio_web) %></h4>
+  <h4>Tel. <%= @vacante.try(:user).try(:telefono) %></h4>
   <br>
   <br>
   <h1>DESCRIPCIÓN</h1>

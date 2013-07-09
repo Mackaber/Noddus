@@ -1,11 +1,13 @@
 <% @page = "none" %>
 <%= link_to image_tag("logo_noddus.png"), "/" %>
 <h1 class="bluefont" style="margin-left: .4px"><a href="/vacantes" style="text-decoration: none;color:#999;">Vacantes</a></h1>
-<% if current_user %>
-    <% if current_user.rol == 'Empresa' %>
-        <div class="pull-right"><a href="/vacantes/new" class="bluefont" style="color:#999999;">Nueva Vacante +</a></div>
-    <% end %>
+
+<% if can? :create, Vacante %>
+    <div class="pull-right"><a href="/vacantes/new" class="bluefont" style="color:#999999;">Nueva Vacante +</a></div>
 <% end %>
+
+<br>
+
 <div id="tag_cloud" style="width: 80%;">
 <% tag_cloud User.tag_counts, %w{s m l} do |tag, css_class| %>
     <%= link_to tag.name, tag_vacantes_path(tag.name), class: css_class %>
@@ -25,12 +27,16 @@
         <td style="width:0.5px;background-color: <%= if v.status == 'disponible' then 'green' else 'red' end %>;"></td>
         <td><h3><a href="/vacantes/<%= v.id %>"><%= v.titulo %></a></h3></td>
         <td style="margin-top: 20px"><%= raw v.tag_list.map { |t| link_to t, tag_vacantes_path(t) }.join(', ') %></td>
-        <% if current_user %>
-            <% if current_user.rol == 'Empresa' && (current_user.vacantes.include? v.id ) %>
-                <td><%= link_to 'Editar Vacante', edit_vacante_path(v) %></td>
-                <td><%= link_to 'Destruir Vacante', v, method: :delete, data: { confirm: '¿Esta Seguro?' } %></td>
+        <td>
+            <% if can? :update, v %>
+                    <%= link_to 'Editar Vacante', edit_vacante_path(v) %>
             <% end %>
-        <% end %>
+        </td>
+        <td>
+            <% if can? :destroy, v %>
+                    <%= link_to 'Destruir Vacante', v, method: :delete, data: { confirm: '¿Esta Seguro?' } %>
+            <% end %>
+        </td>
       </tr>
   <% end %>
   </tbody>

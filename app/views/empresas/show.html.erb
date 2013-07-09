@@ -11,20 +11,21 @@
   <br>
 </div>
 <div style="color: #636363;text-align: right" class="bluefont">
-  <h1><%= @user.nombre.upcase %></h1>
-  <h4><%= @user.perfil %></h4>
-  <h4><%= @user.email %></h4>
+  <!--TODO: Igual que con los perfiles, validación y valores default-->
+  <h1><%= @user.try(:nombre).upcase %></h1>
+  <h4><%= @user.try(:perfil) %></h4>
+  <h4><%= @user.try(:email) %></h4>
   <br>
   <br>
-  <h4><%= @user.ubicacion %></h4>
-  <h4><%= @user.escuela %></h4>
-  <h4><%= @user.skype %></h4>
-  <h4><%= @user.sitio_web %></h4>
-  <h4>Tel. <%= @user.telefono %></h4>
+  <h4><%= @user.try(:ubicacion) %></h4>
+  <h4><%= @user.try(:escuela) %></h4>
+  <h4><%= @user.try(:skype) %></h4>
+  <h4><%= @user.try(:sitio_web) %></h4>
+  <h4>Tel. <%= @user.try(:telefono) %></h4>
   <br>
   <br>
   <h1>DESCRIPCIÓN</h1>
-  <h4><%= @user.descripcion %></h4>
+  <h4><%= @user.try(:descripcion) %></h4>
   <br>
   <h1>MIS VACANTES</h1>
   <% @user.vacantes.each do |v| %>
