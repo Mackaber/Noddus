@@ -10,7 +10,7 @@
 </div>
 <div style="color: #636363;text-align: right" class="bluefont">
   <!--TODO: Llenar la Base de Datos con valores por default-->
-  <h1><%= @user.try(:nombre).upcase %></h1>
+  <h1><%= @user.try(:nombre).try(:upcase) %></h1>
   <h4><%= @user.try(:carrera) %></h4>
   <h4><%= @user.try(:email) %></h4>
   <br>
