@@ -1,8 +1,9 @@
 Noddus::Application.routes.draw do
 
   resources :vacantes
-  match '/practicantes/:id' => 'main#show'
-  match '/practicantes' => 'main#practicantes'
+
+  match '/practicantes/:id' => 'practicantes#show'
+  match '/practicantes' => 'practicantes#practicantes'
 
   match '/empresas/:id' => 'empresas#show'
   match '/empresas' => 'empresas#empresas'
