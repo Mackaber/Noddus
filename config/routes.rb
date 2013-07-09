@@ -8,7 +8,7 @@ Noddus::Application.routes.draw do
   match '/empresas/:id' => 'empresas#show'
   match '/empresas' => 'empresas#empresas'
 
-  get 'tags/practicantes/:tag', to: 'main#practicantes', as: :tag_practicantes
+  get 'tags/practicantes/:tag', to: 'practicantes#practicantes', as: :tag_practicantes
   get 'tags/empresas/:tag', to: 'empresas#index', as: :tag_empresas
   get 'tags/vacantes/:tag', to: 'vacantes#index', as: :tag_vacantes
 
