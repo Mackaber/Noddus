@@ -23,10 +23,11 @@ class User < ActiveRecord::Base
 
       user.email = auth.info.email
       user.nombre = auth.info.first_name
-      user.imagen = auth.info.image
+      #se agrego el split para forzar el tamaño
+      user.imagen = auth.info.image.split("?")[0] + "?width=300&height=300"
       user.rol = "Practicante"
       #---------------------------------------
-      user.ubicacion = auth.extra.raw_info.location
+      user.ubicacion = auth.extra.raw_info.try(:location).name
       user.cumpleanos = auth.extra.raw_info.birthday
       user.genero = auth.extra.raw_info.gender
       user.escuela = auth.extra.raw_info.educacion

@@ -213,7 +213,9 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :facebook, '131087293760021', '969bd508816640d48592319acf7c35c0', scope: "email,user_location,user_birthday,user_education_history", :display => 'popup'
+
+  #Lo de la imagen large, obtenido de http://stackoverflow.com/questions/10532425/get-user-profile-large-picture-from-facebook-with-omniauth-in-devise-2-0
+  config.omniauth :facebook, '131087293760021', '969bd508816640d48592319acf7c35c0', scope: "email,user_location,user_birthday,user_education_history"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

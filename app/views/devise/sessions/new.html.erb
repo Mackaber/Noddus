@@ -1,16 +1,18 @@
-<h2>Sign in</h2>
+<h2>Entrar</h2>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
+  <div><%= f.label :email %>
   <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.label :password %><br />
+  <div><%= f.label :password %>
   <%= f.password_field :password %></div>
 
+  <div class="span4">
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+    <%= f.label :remember_me, :class => "span2", :style => "margin-left: -20px;" %><%= f.check_box :remember_me, :class => "span1" %>
   <% end -%>
+  </div>
 
-  <div><%= f.submit "Sign in" %></div>
+  <div><%= f.submit "Entrar", :class => "btn"  %></div>
 <% end %>
 

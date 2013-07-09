@@ -4,29 +4,30 @@
 <br>
 <div class="span4">
   <% if @user.imagen %>
-    <%= image_tag( @user.imagen, :style => "width:280px") %>
+      <%= image_tag( @user.imagen, :style => "width:280px") %>
   <% else %>
-    <%= image_tag("foto_perfil.gif") %>
+      <%= image_tag("foto_perfil.gif") %>
   <% end %>
   <br>
   <h4 style="color: #636363;" class="bluefont">Porcentaje de Inglés <%= @user.ingles_prc %></h4>
   <h4 style="color: #636363;" class="bluefont">Otro idioma: <%= @user.idioma %>: <%= @user.idioma_prc %></h4>
 </div>
 <div style="color: #636363;text-align: right" class="bluefont">
-  <h1><%= @user.nombre.upcase %></h1>
-  <h4><%= @user.carrera %></h4>
-  <h4><%= @user.email %></h4>
+  <!--TODO: Llenar la Base de Datos con valores por default-->
+  <h1><%= @user.try(:nombre).upcase %></h1>
+  <h4><%= @user.try(:carrera) %></h4>
+  <h4><%= @user.try(:email) %></h4>
   <br>
   <br>
-  <h4><%= if @user.genero == 'male' then 'Hombre' else 'Mujer' end %></h4>
-  <h4><%= @user.ubicacion %></h4>
-  <h4><%= Time.now.year - @user.cumpleanos.year %></h4>
-  <h4><%= @user.escuela %></h4>
-  <h4><%= @user.skype %></h4>
-  <h4><%= @user.sitio_web %></h4>
-  <h4>Tel. <%= @user.telefono %></h4>
+  <h4><%= if @user.try(:genero) == 'male' then 'Hombre' else 'Mujer' end %></h4>
+  <h4><%= @user.try(:ubicacion) %></h4>
+  <h4><%= Time.now.year - @user.try(:cumpleanos).year %></h4>
+  <h4><%= @user.try(:escuela) %></h4>
+  <h4><%= @user.try(:skype) %></h4>
+  <h4><%= @user.try(:sitio_web) %></h4>
+  <h4>Tel. <%= @user.try(:telefono) %></h4>
   <br>
   <br>
   <h1>PRESENTACIÓN</h1>
-  <h4><%= @user.descripcion %></h4>
+  <h4><%= @user.try(:descripcion) %></h4>
 </div>

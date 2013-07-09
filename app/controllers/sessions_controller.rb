@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   def create
     user = User.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
-    request.env["omniauth.auth"].to_yaml
+    #request.env["omniauth.auth"].to_yaml
     redirect_to edit_user_registration_url
   end
 

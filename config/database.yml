@@ -15,10 +15,12 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: Noddus_development
+  database: noddus_development
   pool: 5
-  username: Noddus
+  username: noddus
   password: Noddus
+  host: localhost
+  port: 5432
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -43,13 +45,17 @@ test:
   encoding: unicode
   database: Noddus_test
   pool: 5
-  username: Noddus
+  username: noddus
   password: Noddus
+  host: localhost
+  port: 5432
 
 production:
   adapter: postgresql
   encoding: unicode
   database: Noddus_production
   pool: 5
-  username: Noddus
+  username: noddus
   password: Noddus
+  host: localhost
+  port: 5432
