@@ -15,7 +15,7 @@ module ApplicationHelper
 
  def show_full_image(user)
    if !(user.avatar.to_s == "")
-     cl_image_tag(user.imagen, :style => "width:280px",:width => 280, :height => 280, :crop => :thumb, :gravity => :face)
+     cl_image_tag(user.avatar, :style => "width:280px",:width => 280, :height => 280, :crop => :thumb, :gravity => :face)
    elsif user.imagen
       image_tag(user.imagen, :style => "width:280px")
    else
