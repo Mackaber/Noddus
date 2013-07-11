@@ -215,7 +215,10 @@ Devise.setup do |config|
   # up on your models and hooks.
 
   #Lo de la imagen large, obtenido de http://stackoverflow.com/questions/10532425/get-user-profile-large-picture-from-facebook-with-omniauth-in-devise-2-0
+  #TODO: poner las llaves como env, no como hardcoded
   config.omniauth :facebook, '131087293760021', '969bd508816640d48592319acf7c35c0', scope: "email,user_location,user_birthday,user_education_history"
+  config.omniauth :linkedin_oauth2, 'rb9rzy8ad4ez', 'T4KPFIEcUWfimCe9', scope: 'r_fullprofile r_emailaddress r_network',   :fields => ["id", "email-address", "first-name", "last-name", "headline", "industry", "picture-url", "public-profile-url", "location", "positions", "educations", "skills", "date-of-birth", "languages", "picture-urls::(original)"]
+
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

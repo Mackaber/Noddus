@@ -130,7 +130,8 @@
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
 
-        <% if !(current_user.provider == "facebook") %>
+        <% if !(current_user.provider == "facebook" || current_user.provider == "linkedin_oauth2") %>
+            <% logger.info(!(current_user.provider == "facebook" || current_user.provider == "linkedin_oauth2")) %>
             <div class="field">
               <%= f.label :password, "Contraseña (Déjalo en blanco si no quieres cambiarla)",:class => "span3" %>
               <%= f.password_field :password, :autocomplete => "off", :class => "span3" %>

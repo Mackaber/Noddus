@@ -10,7 +10,7 @@ class RegistrationsController < Devise::RegistrationsController
   def update
     @user = User.find(current_user.id)
 
-    successfully_updated = if needs_password?(@user, params) || !(@user.provider == "facebook")
+    successfully_updated = if needs_password?(@user, params) || !(@user.provider == "facebook" || @user.provider == "linkedin_oauth2" )
                              @user.update_with_password(params[:user])
                            else
                              # remove the virtual current_password attribute update_without_password
