@@ -28,12 +28,13 @@
             <div>
                 <a href="#" id="drop1" role="button" class="bluefont dropdown-toggle" data-toggle="dropdown" style="position: absolute;margin-left: -100px;">
                   <% if current_user.nombre %>
-                    <%= current_user.nombre[0..12] %> &nbsp; <b class="bluefont caret"></b>
+                    <%= current_user.nombre[0..10] %> &nbsp; <b class="bluefont caret"></b>
                   <% else %>
                     <div style="font-size: 14px;"> <%= current_user.email[0..10] %> &nbsp; <b class="bluefont caret"></b></div>
                   <% end %>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="drop1">
+                  <li><%= link_to "Ver Perfil", '/practicantes/' + current_user.id.to_s %></li>
                   <li><%= link_to "Editar Perfil", edit_user_registration_path %></li>
                   <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></li>
                 </ul>

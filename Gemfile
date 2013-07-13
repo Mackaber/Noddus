@@ -10,6 +10,7 @@ gem 'pg'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin-oauth2'
+gem 'omniauth-google-oauth2'
 gem 'devise'
 gem 'chosen-rails'
 

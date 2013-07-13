@@ -218,7 +218,7 @@ Devise.setup do |config|
   #TODO: poner las llaves como env, no como hardcoded
   config.omniauth :facebook, '131087293760021', '969bd508816640d48592319acf7c35c0', scope: "email,user_location,user_birthday,user_education_history"
   config.omniauth :linkedin_oauth2, 'rb9rzy8ad4ez', 'T4KPFIEcUWfimCe9', scope: 'r_fullprofile r_emailaddress r_network',   :fields => ["id", "email-address", "first-name", "last-name", "headline", "industry", "picture-url", "public-profile-url", "location", "positions", "educations", "skills", "date-of-birth", "languages", "picture-urls::(original)"]
-
+  config.omniauth :google_oauth2, '135309302491', 'IqtJh_yK46RRoHXrFGKKCMHb', {access_type: 'online', approval_prompt: ''}
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

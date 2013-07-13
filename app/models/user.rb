@@ -48,6 +48,17 @@ class User < ActiveRecord::Base
         user.imagen = auth.extra.raw_info.pictureUrls.values[1][0]
         user.escuela = auth.extra.raw_info.educations.values[1][0].schoolName
         user.cumpleanos = birthdate.to_date
+      elsif user.provider == 'google_oauth2'
+        user.email = auth.info.email
+        user.nombre = auth.info.name
+        user.imagen = auth.info.image
+
+        bd = auth.extra.raw_info.try(:birthday).try(:to_date)
+        if bd.year > 0
+          user.cumpleanos = auth.extra.raw_info.try(:birthday).try(:to_date)
+        end
+        user.genero = auth.extra.raw_info.gender
+
       end
       #Tomado de http://asciicasts.com/episodes/236-omniauth-part-2
       user.save(:validate => false)

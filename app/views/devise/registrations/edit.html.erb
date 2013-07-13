@@ -78,7 +78,7 @@
             <!-- SOLO ESTUDIANTE -->
             <div class="field">
               <%= f.label :genero, "Género", :class => "span3" %>
-              <%= f.select :genero, options_for_select([["Hombre", "male"], ["Mujer", "female"]],:selected => current_user.genero), :class => "edit-select span3" %>
+              <%= f.select :genero, options_for_select([["Hombre", "male"], ["Mujer", "female"],["Indefinido", "undefined"]],:selected => current_user.genero), :class => "edit-select span3" %>
             </div>
             <!-- SOLO ESTUDIANTE -->
             <div class="field">
@@ -144,7 +144,7 @@
 
             <div class="field">
               <%= f.label :current_password, "Contraseña actual (Tu contraseña es necesaria para confirmar los cambios)", :class => "span3" %>
-              <%= f.password_field :current_password, :class => "span3" %>
+              <%= f.password_field :current_password, :class => "span3", :required => "required" %>
             </div>
         <% end %>
 
