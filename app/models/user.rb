@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   has_many :vacantes
   devise :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable #, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   acts_as_taggable # :habilidades
 
