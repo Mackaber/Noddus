@@ -6,10 +6,9 @@ class PracticantesController < ApplicationController
   end
 
   def practicantes
+    @users = User.where('pro' => true).where("rol = 'Practicante'")
     if params[:tag]
-      @users = User.where("rol = 'Practicante'").tagged_with(params[:tag])
-    else
-      @users = User.where("rol = 'Practicante'")
+      @users = @users.tagged_with(params[:tag])
     end
 
     respond_to do |format|
