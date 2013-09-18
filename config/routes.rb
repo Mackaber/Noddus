@@ -1,22 +1,22 @@
 Noddus::Application.routes.draw do
-
-  resources :vacantes
-
-  match '/practicantes/:id' => 'practicantes#show'
-  match '/practicantes' => 'practicantes#practicantes'
-
-  match '/empresas/:id' => 'empresas#show'
-  match '/empresas' => 'empresas#empresas'
-
-  get 'tags/practicantes/:tag', to: 'practicantes#practicantes', as: :tag_practicantes
-  get 'tags/empresas/:tag', to: 'empresas#index', as: :tag_empresas
-  get 'tags/vacantes/:tag', to: 'vacantes#index', as: :tag_vacantes
-
-  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", registrations: "registrations"} do
-    get '/users/sign_in' => 'devise/sessions#create'
-    get '/users/sign_out' => 'devise/sessions#destroy'
-  end
-
+  #TODO: Desbloquear
+  #resources :vacantes
+  #
+  #match '/practicantes/:id' => 'practicantes#show'
+  #match '/practicantes' => 'practicantes#practicantes'
+  #
+  #match '/empresas/:id' => 'empresas#show'
+  #match '/empresas' => 'empresas#empresas'
+  #
+  #get 'tags/practicantes/:tag', to: 'practicantes#practicantes', as: :tag_practicantes
+  #get 'tags/empresas/:tag', to: 'empresas#index', as: :tag_empresas
+  #get 'tags/vacantes/:tag', to: 'vacantes#index', as: :tag_vacantes
+  #
+  #devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", registrations: "registrations"} do
+  #  get '/users/sign_in' => 'devise/sessions#create'
+  #  get '/users/sign_out' => 'devise/sessions#destroy'
+  #end
+  match '/registrarmail' => 'emails#registrarmail'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -66,7 +66,7 @@ Noddus::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'main#index'
+  root :to => 'main#landing'
 
   # See how all your routes lay out with "rake routes"
 

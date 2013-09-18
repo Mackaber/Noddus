@@ -1,40 +1,33 @@
-<!DOCTYPE html>
-<!-- -->
-<html>
-<head>
-  <title>Noddus Team</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./css/style.css" rel="stylesheet" media="screen">
-  <!-- Bootstrap -->
-  <link href="./css/bootstrap.min.css" rel="stylesheet" media="screen">
-  <link href="./css/bootstrap-responsive.css" rel="stylesheet">
-</head>
-<body>
-<div class="container">
-  <div class="row" id="uno">
+<% if flash[:notice] %>
+  <script>
+    alert('<%= flash[:notice] %>');
+  </script>
+<% end %>
+<div class="row" id="uno">
+  <div class="container">
     <!--LOGO y MENU-->
     <div id="span-logo" class="col-lg-4">
       <div id="logo-container">
-        <img id="logo" src="./img/logo_noddus.png" />
+        <img id="logo" src="/assets/img//logo_noddus.png" />
       </div>
     </div>
     <div id="span-nav" class="col-lg-8">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">TOUR</a></li>
-        <li><a href="#">BENEFICIOS</a></li>
-        <li><a href="#">BLOG</a></li>
-        <li><a href="#">CONTACTO</a></li>
-        <li><a href="#"><img src="./img/twitter.png" style="width: 20px;" /></a></li>
-        <li><a href="#"><img src="./img/facebook.png" style="width: 13px;" /></a></li>
-        <li><a href="#"><img src="./img/mail.png" style="width: 20px;" /></a></li>
-        <li><a href="#"><img src="./img/login.png" style="width: 25px;" />ENTRAR</a></li>
+        <li class="active"><a href="/">TOUR</a></li>
+        <!-- <li><a href="#">BENEFICIOS</a></li> -->
+        <li><a href="http://noddus.tumblr.com/">BLOG</a></li>
+        <li><a href="http://noddus.tumblr.com/contacto">CONTACTO</a></li>
+        <li><a href="https://twitter.com/nodd_us"><img src="/assets/img//twitter.png" style="width: 20px;" /></a></li>
+        <li><a href="https://www.facebook.com/noddusweb"><img src="/assets/img//facebook.png" style="width: 13px;" /></a></li>
+        <li><a href="mailto:contacto@nodd.us"><img src="/assets/img//mail.png" style="width: 20px;" /></a></li>
+        <!-- <li><a href="#"><img src="/assets/img//login.png" style="width: 25px;" />ENTRAR</a></li> -->
       </ul>
     </div>
     <!-- /LOGO y MENU-->
     <!--VIDEO-->
     <div class="col-lg-12">
       <div id="videoyoutube">
-        <img id="video" src="./img/youtube.png" />
+        <img id="video" src="/assets/img//youtube.png" />
       </div>
     </div>
     <!--/VIDEO-->
@@ -44,110 +37,94 @@
     </div>
     <div id="span-que-hacemos"class="col-lg-12" style="font-size: 26px;">
       <ul class="" id="hacemos">
-        <li><a href="#"><img src="./img/hacemos/hacemos1.png"></a></li>
-        <li><a href="#"><img src="./img/hacemos/hacemos2.png"></a></li>
-        <li><a href="#"><img src="./img/hacemos/hacemos3.png"></a></li>
-        <li><a href="#"><img src="./img/hacemos/hacemos4.png"></a></li>
-        <li><a href="#"><img src="./img/hacemos/hacemos5.png"></a></li>
-        <li><a href="#"><img src="./img/hacemos/hacemos6.png"></a></li>
-        <li><a href="#"><img src="./img/hacemos/hacemos7.png"></a></li>
+        <li><a href="#"><img src="/assets/img//hacemos/hacemos1.png"></a></li>
+        <li><a href="#"><img src="/assets/img//hacemos/hacemos2.png"></a></li>
+        <li><a href="#"><img src="/assets/img//hacemos/hacemos3.png"></a></li>
+        <li><a href="#"><img src="/assets/img//hacemos/hacemos4.png"></a></li>
+        <li><a href="#"><img src="/assets/img//hacemos/hacemos5.png"></a></li>
+        <li><a href="#"><img src="/assets/img//hacemos/hacemos6.png"></a></li>
+        <li><a href="#"><img src="/assets/img//hacemos/hacemos7.png"></a></li>
         <!-- ... -->
       </ul>
     </div>
-    <!--/QUE HACEMOS-->
   </div>
-  <div class="row" id="dos">
-    <img id="rocket" src="./img/rocket.png" />
-    <p id="registro" style="font-size:26px;">Ajuste su cintur&oacute;n, estamos por despegar</p><br>
-    <p id="registro" style="font-size:18px;">
-      Reg&iacute;strate ahora y s&eacute; parte del pr&oacute;ximo lanzamiento</p>
-    <img id="rocket" src="./img/email.png" />
-  </div>
+  <!--/QUE HACEMOS-->
+</div>
+<div class="row" id="dos">
+  <img id="rocket" src="/assets/img//rocket.png" style=/>
+  <p id="registro" style="font-size:26px;">Ajuste su cintur&oacute;n, estamos por despegar</p><br>
+  <p id="registro" style="font-size:18px;">
+    Reg&iacute;strate ahora y s&eacute; parte del pr&oacute;ximo lanzamiento</p>
+  <!--         <img id="rocket" src="/assets/img//email.png" /> -->
 
-  <div class="row" id="tres">
-    <img id="mosaico" src="./img/fotos_mosa.png" />
-    <div id="caracteristica" class="col-lg-6">
-      <h1>PRIMERA CARACTERISTICA</h1>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </div>
-  </div>
+  <%= form_tag("/registrarmail", method: "post" ) do %>
+    <%= text_field_tag(:mail," ",:class => "span4 offset4 niceinput", :type => "email") %>
+    <%= submit_tag("", :class => "checkbutton") %>
+  <% end %>
+<!--   <input class="span4 offset4 niceinput" style="margin-left: 450px;" type="text" />
+  <button class="checkbutton" ></button> -->
+</div>
 
-  <div class="row" id="cuatro">
-    <div id="caracteristica2" class="col-lg-6">
-      <h1>SEGUNDA CARACTERISTICA</h1>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </div>
-    <img id="app_view" src="./img/app_view.png" />
+<div class="row" id="tres">
+  <img id="mosaico" src="/assets/img//fotos_mosa.png" />
+  <div id="caracteristica" class="col-lg-6">
+    <h1>Conecta</h1>
+    Crea tu perfil de acuerdo a tus habilidades y tus estudios. Sube tu portafolio universitario y comienza a conectarte con empresas que est&aacute;n interesadas en ti.
   </div>
+</div>
 
-  <div class="row" id="cinco">
-    <img id="mosaico" src="./img/logos_mosa.png" />
-    <div id="caracteristica" class="col-lg-6">
-      <h1>TERCERA CARACTERISTICA</h1>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </div>
+<div class="row" id="cuatro">
+  <div id="caracteristica2" class="col-lg-6">
+    <h1>Descubre</h1>
+    Tus habilidades son lo m&aacute;s importante. Encuentra vacantes para hacer tus pr&aacute;cticas profesionales de acuerdo a ellas.
   </div>
+  <img id="app_view" src="/assets/img//app_view.png" />
+</div>
 
-  <div class="row" id="seis">
-    <div id="caracteristica4" class="col-lg-6">
-      <h1>CUARTA CARACTERISTICA</h1>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </div>
-    <img id="iconos_" src="./img/iconos.png" />
+<div class="row" id="cinco">
+  <img id="mosaico" src="/assets/img//logos_mosa.png" />
+  <div id="caracteristica" class="col-lg-6">
+    <h1>Demuestra</h1>
+    Cada d&iacute;a se unen m&aacute;s empresas a la plataforma esperando a su practicante ideal, &iquest;Tienes lo que se requiere?
   </div>
+</div>
 
-  <div class="row" id="siete">
-    <div id="caracteristica7" class="col-lg-12">
-      Al registrarte conseguir&aacute;s estos superpoderes
-    </div>
-    <div id="beneficios" class="row">
-      <div id="categoria" class="col-lg-6">
-        <div class="row"><img src="./img/ninja_txt.png"></div>
-        <div class="row">
-          Lista de beneficios para practicantes.
-          Lorem ipsum dolor sit amet, eget condimentum ligula porttitor urna, nec sit platea mauris ligula. Convallis vel amet semper, maecenas augue sit interdum. Tortor ad nullam aliquet eget, vulputate vel erat augue pede nunc magna donec.
-        </div>
-      </div>
-      <div id="categoria" class="col-lg-6">
-        <div class="row"><img src="./img/ninja_txt.png"></div>
-        <div class="row">
-          Lista de beneficios para practicantes.
-          Lorem ipsum dolor sit amet, eget condimentum ligula porttitor urna, nec sit platea mauris ligula. Convallis vel amet semper, maecenas augue sit interdum. Tortor ad nullam aliquet eget, vulputate vel erat augue pede nunc magna donec.
-        </div>
-      </div>
-      <div id="categoria" class="col-lg-6">
-        <div class="row"><img src="./img/ninja_txt.png"></div>
-        <div class="row">
-          Lista de beneficios para practicantes.
-          Lorem ipsum dolor sit amet, eget condimentum ligula porttitor urna, nec sit platea mauris ligula. Convallis vel amet semper, maecenas augue sit interdum. Tortor ad nullam aliquet eget, vulputate vel erat augue pede nunc magna donec.
-        </div>
+<div class="row" id="seis">
+  <div id="caracteristica4" class="col-lg-6">
+    <h1>Busca</h1>
+    Si eres empresa, buscar candidatos jam&aacute;s hab&iacute;a sido tan f&aacute;cil. Ahorra tiempo y esfuerzo mientras nosotros te conectamos.
+  </div>
+  <img id="iconos_" src="/assets/img//iconos.png" />
+</div>
+
+<div class="row" id="siete">
+  <div id="caracteristica7" class="col-lg-12">
+    Al registrarte conseguir&aacute;s estos superpoderes
+  </div>
+  <div id="beneficios" class="row">
+    <div id="categoria" class="col-lg-6">
+      <div class="row"><img src="/assets/img//ninja_txt.png"></div>
+      <div class="row">
+        1. Encuentra al candidato id&oacute;neo para el perfil de la vacante por medio de la conexi&oacute;n de habilidades. Esto nos permite contactar r&aacute;pidamente con tu practicante ideal.<br>
+        2. Control total sobre la b&uacute;squeda y conexi&oacute;n con practicantes.<br>
+        3. Realiza entrevistas por videollamada<br>
       </div>
     </div>
+    <div id="categoria" class="col-lg-6">
+      <div class="row"><img src="/assets/img//ninja_txt.png"></div>
+      <div class="row">
+        1. Encontrar una vacante que sea &oacute;ptima de acuerdo a tu perfil.<br>
+        2. Obtienen el Certificado Nodus al finalizar y dale valor curricular a tu trabajo durante las pr&aacute;cticas profesionales.<br>
+        3. Sube tu CV y portafolio para que las empresas puedan verlo.<br>
+      </div>
+    </div>
+    <div id="categoria" class="col-lg-6">
+      <div class="row"><img src="/assets/img//ninja_txt.png"></div>
+      <div class="row">
+        1. Administra a tus alumnos de una manera f&aacute;cil.<br>
+        2. Realiza convenios con m&aacute;s empresas para conectar a tus estudiantes.<br>
+        3. Conoce con mayor precisi&oacute;n el impacto de tus modelos de estudio. <br>
+      </div>
+    </div>
   </div>
-
-
-  <div class="row" id="dos">
-    <img id="rocket" src="./img/rocket.png" />
-    <p id="registro" style="font-size:26px;">Ajuste su cintur&oacute;n, estamos por despegar</p><br>
-    <p id="registro" style="font-size:18px;">
-      Reg&iacute;strate ahora y s&eacute; parte del pr&oacute;ximo lanzamiento</p>
-    <img id="rocket" src="./img/email.png" />
-  </div>
-
-  <div class="row" id="uno">
-    <img id="rocket" src="./img/rocket.png" />
-    <p id="registro" style="font-size:26px;">Ajuste su cintur&oacute;n, estamos por despegar</p><br>
-    <p id="registro" style="font-size:18px;">
-      Reg&iacute;strate ahora y s&eacute; parte del pr&oacute;ximo lanzamiento</p>
-    <img id="rocket" src="./img/email.png" />
-  </div>
-
-
-  <!-- JavaScript plugins (requires jQuery) -->
-  <script src="http://code.jquery.com/jquery.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/bootstrap.min.js"></script>
-  <!-- Optionally enable responsive features in IE8 -->
-  <script src="js/respond.js"></script>
-</body>
-</html>
+</div>
