@@ -17,6 +17,7 @@ Noddus::Application.routes.draw do
   #  get '/users/sign_out' => 'devise/sessions#destroy'
   #end
   match '/registrarmail' => 'emails#registrarmail'
+  match '/landing' => 'main#landing' 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
