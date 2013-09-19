@@ -5,7 +5,7 @@ class MainController < ApplicationController
     end
   end
 
-  def landing
+  def thelanding
   	
   end
 

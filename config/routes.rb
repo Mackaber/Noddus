@@ -17,7 +17,7 @@ Noddus::Application.routes.draw do
   #  get '/users/sign_out' => 'devise/sessions#destroy'
   #end
   match '/registrarmail' => 'emails#registrarmail'
-  match '/landing' => 'main#landing' 
+  match '/landing' => 'main#thelanding' 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -67,7 +67,7 @@ Noddus::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'main#landing'
+  root :to => 'main#thelanding'
 
   # See how all your routes lay out with "rake routes"
 
