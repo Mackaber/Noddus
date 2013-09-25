@@ -11,7 +11,36 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130717202459) do
+ActiveRecord::Schema.define(:version => 20130925023302) do
+
+  create_table "aplicacions", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "vacante_id"
+    t.boolean  "aceptado"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "aplicacions", ["user_id"], :name => "index_aplicacions_on_user_id"
+  add_index "aplicacions", ["vacante_id"], :name => "index_aplicacions_on_vacante_id"
+
+  create_table "emails", :force => true do |t|
+    t.string   "mail"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "relationships", :force => true do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.string   "tipo"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "relationships", ["followed_id"], :name => "index_relationships_on_followed_id"
+  add_index "relationships", ["follower_id", "followed_id"], :name => "index_relationships_on_follower_id_and_followed_id", :unique => true
+  add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
 
   create_table "skills", :force => true do |t|
     t.string   "name"
@@ -79,6 +108,7 @@ ActiveRecord::Schema.define(:version => 20130717202459) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.boolean  "pro",                    :default => false
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
@@ -98,6 +128,10 @@ ActiveRecord::Schema.define(:version => 20130717202459) do
     t.date     "termina"
     t.integer  "empresa_id"
     t.integer  "user_id"
+    t.date     "vencimiento", :default => '2012-06-15'
+    t.boolean  "plus",        :default => false
+    t.float    "price",       :default => 179.0
+    t.float    "price_plus",  :default => 229.0
   end
 
   add_index "vacantes", ["empresa_id"], :name => "index_vacantes_on_empresa_id"

@@ -17,6 +17,13 @@ class Ability
         can :destroy, Vacante do |vacante|
           vacante.try(:user) == user
         end
+
+        can :update, Aplicacion do |aplicacion|
+          aplicacion.vacante.user == user
+        end
+
+      elsif user.rol == "Practicante"
+        can :create, Aplicacion
       end
     end
 

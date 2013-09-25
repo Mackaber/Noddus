@@ -3,6 +3,17 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   has_many :vacantes
+
+  has_many :aplicacions
+  # from http://ruby.railstutorial.org/chapters/following-users#top
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+  has_many :followed_users, through: :relationships, source: :followed
+  has_many :reverse_relationships, foreign_key: "followed_id",
+           class_name:  "Relationship",
+           dependent:   :destroy
+  has_many :followers, through: :reverse_relationships, source: :follower
+
+
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
@@ -51,7 +62,7 @@ class User < ActiveRecord::Base
       elsif user.provider == 'google_oauth2'
         user.email = auth.info.email
         user.nombre = auth.info.name
-        user.imagen = auth.info.image
+        user.imagen = auth.pinfo.image
 
         bd = auth.extra.raw_info.try(:birthday).try(:to_date)
         if bd.year > 0
@@ -64,4 +75,19 @@ class User < ActiveRecord::Base
       user.save(:validate => false)
     end
   end
+
+  # from http://ruby.railstutorial.org/chapters/following-users#top
+
+  def following?(other_user)
+    self.relationships.find_by(followed_id: other_user.id)
+  end
+
+  def follow!(other_user, type)
+    self.relationships.create!(followed_id: other_user.id, type: type)
+  end
+
+  def unfollow!(other_user)
+    relationships.find_by(followed_id: other_user.id).destroy!
+  end
+
 end
