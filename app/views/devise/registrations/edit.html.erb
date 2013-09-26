@@ -6,6 +6,21 @@
         <%= devise_error_messages! %>
         <%= flash[:notice] %>
         <br>
+
+        <% if !(current_user.provider == "facebook" || current_user.provider == "linkedin_oauth2") %>
+            <% logger.info(!(current_user.provider == "facebook" || current_user.provider == "linkedin_oauth2")) %>
+            <div class="field">
+              <%= f.label :password, "Contraseña (Déjalo en blanco si no quieres cambiarla)",:class => "span3" %>
+              <%= f.password_field :password, :autocomplete => "off", :class => "span3" %>
+            </div>
+            <br>
+            <div class="field">
+              <%= f.label :password_confirmation, "Confirma tu contraseña", :class => "span3" %>
+              <%= f.password_field :password_confirmation, :class => "span3" %>
+            </div>
+            <br>
+            <br>
+        <% end %>
         <!-- COINCIDE -->
         <div class="field">
           <%= f.label :email, "Email", :class => "span3" %>
@@ -131,17 +146,6 @@
         <% end %>
 
         <% if !(current_user.provider == "facebook" || current_user.provider == "linkedin_oauth2") %>
-            <% logger.info(!(current_user.provider == "facebook" || current_user.provider == "linkedin_oauth2")) %>
-            <div class="field">
-              <%= f.label :password, "Contraseña (Déjalo en blanco si no quieres cambiarla)",:class => "span3" %>
-              <%= f.password_field :password, :autocomplete => "off", :class => "span3" %>
-            </div>
-             <br>
-            <div class="field">
-              <%= f.label :password_confirmation, "Confirma tu contraseña", :class => "span3" %>
-              <%= f.password_field :password_confirmation, :class => "span3" %>
-            </div>
-
             <div class="field">
               <%= f.label :current_password, "Contraseña actual (Tu contraseña es necesaria para confirmar los cambios)", :class => "span3" %>
               <%= f.password_field :current_password, :class => "span3", :required => "required" %>
@@ -152,9 +156,8 @@
     <% end %>
   </div>
 
-  <h3>Cancel my account</h3>
+  <h3>Cerrar mi Cuenta</h3>
 
-  <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+  <p> <%= button_to "Cerrar Cuenta", registration_path(resource_name), :data => { :confirm => "Estas Seguro?" }, :method => :delete, :class => "btn btn-danger btn-small" %></p>
 
-  <%= link_to "Back", :back %>
 </div>

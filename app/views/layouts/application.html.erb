@@ -36,7 +36,7 @@
                 <ul class="dropdown-menu" aria-labelledby="drop1">
 
                   <!--Para el practicante y la empresa es distinto-->
-                  <% if current_user.rol = "Empresa"%>
+                  <% if current_user.rol == "Empresa"%>
                     <li><%= link_to "Ver Perfil", '/empresas/' + current_user.id.to_s %></li>
                   <% else %>
                     <li><%= link_to "Ver Perfil", '/practicantes/' + current_user.id.to_s %></li>

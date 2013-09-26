@@ -7,12 +7,13 @@
 <% end %>
 
 <br>
-
-<div id="tag_cloud" style="width: 80%;">
-<% tag_cloud User.tag_counts, %w{s m l} do |tag, css_class| %>
-    <%= link_to tag.name, tag_vacantes_path(tag.name), class: css_class %>
+<% if current_user.rol == "Estudiante" %>
+    <div id="tag_cloud" style="width: 80%;">
+        <% tag_cloud User.tag_counts, %w{s m l} do |tag, css_class| %>
+            <%= link_to tag.name, tag_vacantes_path(tag.name), class: css_class %>
+        <% end %>
+    </div>
 <% end %>
-</div>
 <br>
 <table class="table">
   <thead>

@@ -3,14 +3,19 @@ class VacantesController < ApplicationController
   # GET /vacantes
   # GET /vacantes.json
   def index
-    if params[:tag]
-      @vacantes = Vacante.tagged_with(params[:tag])
+    #A la empresa solo se le muestran sus propias vacantes
+    if current_user.rol == "Empresa"
+      @vacantes = current_user.vacantes
     else
-      @vacantes = Vacante.all
-    end
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @vacantes }
+      if params[:tag]
+        @vacantes = Vacante.tagged_with(params[:tag])
+      else
+        @vacantes = Vacante.all
+      end
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @vacantes }
+      end
     end
   end
 

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :vacantes
 
   has_many :aplicacions
+
   # from http://ruby.railstutorial.org/chapters/following-users#top
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   has_many :followed_users, through: :relationships, source: :followed
@@ -13,6 +14,7 @@ class User < ActiveRecord::Base
            dependent:   :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
 
+  has_many :skills, :through => :vacantes, :source => :tags
 
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
@@ -79,15 +81,21 @@ class User < ActiveRecord::Base
   # from http://ruby.railstutorial.org/chapters/following-users#top
 
   def following?(other_user)
-    self.relationships.find_by(followed_id: other_user.id)
+    self.relationships.find_by_followed_id(other_user.id)
   end
 
   def follow!(other_user, type)
-    self.relationships.create!(followed_id: other_user.id, type: type)
+    self.relationships.create!(followed_id: other_user.id, tipo: type)
   end
 
   def unfollow!(other_user)
-    relationships.find_by(followed_id: other_user.id).destroy!
+    self.relationships.find_by_followed_id(other_user.id).destroy
   end
+
+
+  #def skills
+  #  self.vacantes.all.each { |v| v.tags(:skills) }
+  #  end
+  #end
 
 end

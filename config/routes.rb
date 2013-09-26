@@ -12,6 +12,12 @@ Noddus::Application.routes.draw do
   get 'tags/empresas/:tag', to: 'empresas#index', as: :tag_empresas
   get 'tags/vacantes/:tag', to: 'vacantes#index', as: :tag_vacantes
 
+  match '/vacantes/aplicar/:vacante_id' => 'aplicacions#aplicar'
+  match '/vacantes/aceptar/:aplicacion_id' => 'aplicacions#aceptar'
+
+  match '/empresas/follow/:empresa_id' => 'empresas#follow'
+  match '/practicantes/follow/:practicante_id' => 'practicantes#follow'
+
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", registrations: "registrations"} do
     get '/users/sign_in' => 'devise/sessions#create'
     get '/users/sign_out' => 'devise/sessions#destroy'

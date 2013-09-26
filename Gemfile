@@ -20,6 +20,8 @@ gem 'cancan'
 gem 'carrierwave'
 gem 'cloudinary'
 
+gem 'pusher'
+
 
 gem 'acts-as-taggable-on'
 # Gems used only for assets and not required

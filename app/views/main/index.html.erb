@@ -1,5 +1,12 @@
 <% @page = "main" %>
 
+<%if flash[:notice] %>
+    <div class="alert alert-warning alert-dismissable" style="background-color: rgba(252, 248, 227, 0.21);text-shadow: none;">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= flash[:notice] %>
+    </div>
+<% end %>
+
 <div>
   <div class="row-fluid">
     <%= link_to image_tag("logo_noddus.png"), "/" %>

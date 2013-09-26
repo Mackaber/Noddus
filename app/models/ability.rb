@@ -8,9 +8,22 @@ class Ability
     if user.rol == "kiVE7D9GNH+VJDkIvPOtOQ"
       can :manage, :all
     else
-      can :read, :all
+      #can :read, :all
       if user.rol == "Empresa"
+        # Parte de la funcionalidad, una Empresa NO puede ver practicantes a menos que tenga una
+        # vacante con las habilidades descritas
+
+        #can :read, User do |user|
+        #  #user.tagged_with(current_user.skills)
+        #  user.tag_list.include?(User.last.skills)
+        #end
+        #---------------------------------------------------------------------------------------
+
         can :create, Vacante
+
+        can :read , Vacante  do |vacante|
+          vacante.try(:user) == user
+        end
         can :update, Vacante do |vacante|
           vacante.try(:user) == user
         end
@@ -23,6 +36,7 @@ class Ability
         end
 
       elsif user.rol == "Practicante"
+        can :read, Vacante
         can :create, Aplicacion
       end
     end

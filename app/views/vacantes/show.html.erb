@@ -2,6 +2,14 @@
 <%= link_to image_tag("logo_noddus.png"), "/" %>
 <br>
 <br>
+
+<%if flash[:notice] %>
+    <div class="alert alert-warning alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= flash[:notice] %>
+    </div>
+<% end %>
+
 <div class="span4">
   <%= show_full_image(@vacante.user) %>
   <br>
@@ -9,6 +17,11 @@
 </div>
 <div style="color: #636363;text-align: right" class="bluefont">
   <!--TODO: Igual que con los perfiles, validación y valores default-->
+  <% if current_user.rol == "Practicante" %>
+    <%= link_to "Aplicar", "/vacantes/aplicar/" + @vacante.id.to_s %>
+  <% elsif can? :update, @vacante %>
+    <%= link_to "Editar", "/vacantes/" + @vacante.id.to_s + "/edit" %>
+  <% end %>
   <h1><%= @vacante.titulo.upcase %></h1>
   <h4><%= @vacante.try(:user).try(:nombre) %></h4>
   <h4><%= @vacante.try(:user).try(:email) %></h4>
@@ -24,4 +37,20 @@
   <br>
   <h1>DESCRIPCIÓN</h1>
   <h4><%= @vacante.descripcion %></h4>
+  <br>
+  <% if current_user.rol = "Empresa" %>
+      <h1>Aplicaciones</h1>
+      <br>
+      <% @vacante.aplicacions.each do |a| %>
+         <div class="row">
+             <div class="span9">
+               <h4><%= a.user.nombre %></h4>
+             </div>
+             <div class="span2">
+                <h4><%= link_to "Aceptar Vacante", "/vacantes/aceptar/" + a.id.to_s %></h4>
+             </div>
+         </div>
+         <h5><%= a.user.descripcion %></h5>
+      <% end %>
+  <%end %>
 </div>

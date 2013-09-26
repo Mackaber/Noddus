@@ -23,4 +23,13 @@ module ApplicationHelper
    end
  end
 
+def follow_verb(user,other_user)
+  if user.following?(other_user)
+    "Unfollow"
+  else
+    "Follow"
+  end
+
+end
+
 end
