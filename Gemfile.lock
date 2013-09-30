@@ -102,6 +102,12 @@ GEM
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
     orm_adapter (0.4.0)
+    paypal-sdk-core (0.2.6)
+      multi_json (~> 1.0)
+      xml-simple
+    paypal-sdk-rest (0.6.0)
+      paypal-sdk-core (~> 0.2.4)
+      uuidtools (~> 2.1)
     pg (0.15.0)
     polyglot (0.3.3)
     pusher (0.12.0)
@@ -157,8 +163,10 @@ GEM
     uglifier (2.0.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    uuidtools (2.1.4)
     warden (1.2.1)
       rack (>= 1.0)
+    xml-simple (1.1.2)
 
 PLATFORMS
   ruby
@@ -176,6 +184,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-google-oauth2
   omniauth-linkedin-oauth2
+  paypal-sdk-rest
   pg
   pusher
   rails (= 3.2.11)

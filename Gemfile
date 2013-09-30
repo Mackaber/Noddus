@@ -21,6 +21,7 @@ gem 'carrierwave'
 gem 'cloudinary'
 
 gem 'pusher'
+gem 'paypal-sdk-rest'
 
 
 gem 'acts-as-taggable-on'
