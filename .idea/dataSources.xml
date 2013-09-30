@@ -3,8 +3,8 @@
   <component name="DataSourceManagerImpl" format="xml" hash="2909886712">
     <data-source source="LOCAL" name="Rails Noddus: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="91de552d-0272-48c1-b78f-de0ffb4a216e">
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:Noddus_production</jdbc-url>
-      <user-name>Noddus</user-name>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/noddus_development</jdbc-url>
+      <user-name>noddus</user-name>
       <user-password>dfe4dfc5dfcedfcedfdfdfd9</user-password>
       <libraries>
         <library>
@@ -17,8 +17,8 @@
     </data-source>
     <data-source source="LOCAL" name="Rails Noddus: test" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="7c37421f-ae43-41fe-92f4-8f527851a793">
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:Noddus_test</jdbc-url>
-      <user-name>Noddus</user-name>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/noddus_development</jdbc-url>
+      <user-name>noddus</user-name>
       <user-password>dfe4dfc5dfcedfcedfdfdfd9</user-password>
       <libraries>
         <library>
@@ -31,8 +31,8 @@
     </data-source>
     <data-source source="LOCAL" name="Rails Noddus: development" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="54f42a2b-f59a-4fc2-ad21-218ffc1e6097">
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:Noddus_development</jdbc-url>
-      <user-name>Noddus</user-name>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/noddus_development</jdbc-url>
+      <user-name>noddus</user-name>
       <user-password>dfe4dfc5dfcedfcedfdfdfd9</user-password>
       <libraries>
         <library>

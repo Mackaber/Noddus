@@ -16,6 +16,7 @@
     </thead>
     <tbody>
     <% @users.each do |u| %>
+
         <tr onmouseover="">
             <div class="hidden"><%= u.status %></div>
             <td style="width:0.5px;background-color: <%= if u.status == 'disponible' then 'rgb(22, 162, 22);' else 'red' end %>;"></td>
