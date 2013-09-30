@@ -2,7 +2,6 @@ Noddus::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
-  config.action_mailer.default_url_options = { :host => 'yourapp.heroku.com' }
   config.cache_classes = true
 
   # Full error reports are disabled and caching is turned on
