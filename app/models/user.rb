@@ -19,8 +19,7 @@ class User < ActiveRecord::Base
   has_many :mensajes
 
   devise :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable #, :confirmable
-
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   acts_as_taggable # :habilidades
 

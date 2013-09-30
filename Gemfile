@@ -14,6 +14,8 @@ gem 'omniauth-google-oauth2'
 gem 'devise'
 gem 'chosen-rails'
 
+gem 'sendgrid'
+
 gem 'cancan'
 gem 'carrierwave'
 gem 'cloudinary'

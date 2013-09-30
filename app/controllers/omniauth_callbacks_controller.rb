@@ -1,5 +1,4 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  #TODO: Abilitar cuando se salga de la beta
 
   def facebook
     user = User.from_omniauth(request.env["omniauth.auth"])

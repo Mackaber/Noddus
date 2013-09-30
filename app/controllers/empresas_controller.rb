@@ -6,10 +6,10 @@ class EmpresasController < ApplicationController
   end
 
   def empresas
-    @empresas = User.where('pro' => true).where("rol = 'Empresa'")
-
     if params[:tag]
-      @empresas = @empresas.tagged_with(params[:tag])
+      @empresas = User.where("rol = 'Empresa'").tagged_with(params[:tag])
+    else
+      @empresas = User.where("rol = 'Empresa'")
     end
 
     respond_to do |format|

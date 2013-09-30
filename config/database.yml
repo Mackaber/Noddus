@@ -43,7 +43,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: noddus_development
+  database: Noddus_test
   pool: 5
   username: noddus
   password: Noddus
@@ -53,7 +53,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: noddus_development
+  database: Noddus_production
   pool: 5
   username: noddus
   password: Noddus

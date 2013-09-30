@@ -12,6 +12,11 @@
     <%= f.label :remember_me, :class => "span2", :style => "margin-left: -20px;" %><%= f.check_box :remember_me, :class => "span1" %>
   <% end -%>
   </div>
+  <br>
+  <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+    <%= link_to "¿Olvidaste tu contraseña?", new_password_path(resource_name) %><br />
+  <% end -%>
+  <br>
 
   <div><%= f.submit "Entrar", :class => "btn"  %></div>
 <% end %>
