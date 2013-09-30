@@ -45,6 +45,11 @@ class PracticantesController < ApplicationController
       end
     else
       @user.follow!(@practicante,"Empresa->Practicante")
+      @mensaje = Mensaje.new
+      @mensaje.user = @practicante
+      @mensaje.content = "La empresa #{@user.nombre} te ha comenzado a seguir"
+      @mensaje.seen = false
+      @mensaje.save
       respond_to do |format|
         format.html { redirect_to "/practicantes/" + @practicante.id.to_s, notice: "Siguiendo a Practicante" }
       end

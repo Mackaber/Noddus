@@ -38,7 +38,8 @@
   <h1>DESCRIPCIÓN</h1>
   <h4><%= @vacante.descripcion %></h4>
   <br>
-  <% if current_user.rol = "Empresa" %>
+  <!--TODO: Hacer esto con CANCAN-->
+  <% if current_user.id == @vacante.user.id %>
       <h1>Aplicaciones</h1>
       <br>
       <% @vacante.aplicacions.each do |a| %>

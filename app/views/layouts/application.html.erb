@@ -15,12 +15,37 @@
     mixpanel.init("dd9930814521b993d505fc635a2dc569");
   </script>
   <!-- end Mixpanel -->
+
+  <script>
+      $(function() {
+          var pusher = new Pusher('745236cde7f0982fbf09')
+          var activityChannel = pusher.subscribe('site-activity');
+          var activityMonitor = new PusherActivityStreamer(activityChannel, "#activity_stream_example");
+      });
+  </script>
+
 </head>
 
 <body style="background-image: url('<%= if @page == "main" then 'assets/background.jpg' end %>');background-size: 100%;background-repeat: no-repeat">
-<div class="bluebox span2 offset1" >
+<div class="bluebox span3 offset1" >
   <% if current_user %>
-      <ul class="nav pull-right">
+      <ul class="nav pull-right" style="margin-left: -60px;">
+        <li id="fat-menu" class="dropdown">
+          <div class="span1">
+          </div>
+          <div>
+            <a href="#" id="drop1" role="button" class="bluefont dropdown-toggle" data-toggle="dropdown" style="position: absolute;margin-left: -100px;">
+              MSG <span class="badge"><%= current_user.unseen_messages.count %></span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="drop1">
+                <% current_user.mensajes.each do |m| %>
+                  <li><a href="#"><%= m.content %></a></li>
+                <% end %>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <ul class="nav pull-right" style="margin-left: 45px;float: none;">
       <li id="fat-menu" class="dropdown">
         <div class="span1">
             <%= show_navbar_image %>
@@ -74,6 +99,7 @@
 <% end %>
 
 <div class="container">
+  <!--<ul id="activity_stream_example" class="activity-stream"></ul>-->
     <%= yield %>
 </div>
 

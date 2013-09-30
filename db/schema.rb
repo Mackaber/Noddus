@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130925023302) do
+ActiveRecord::Schema.define(:version => 20130926222540) do
 
   create_table "aplicacions", :force => true do |t|
     t.integer  "user_id"
@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(:version => 20130925023302) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "mensajes", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "content"
+    t.boolean  "seen"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "mensajes", ["user_id"], :name => "index_mensajes_on_user_id"
 
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"

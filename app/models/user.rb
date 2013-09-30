@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
 
   has_many :skills, :through => :vacantes, :source => :tags
 
+  has_many :mensajes
+
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
@@ -92,6 +94,10 @@ class User < ActiveRecord::Base
     self.relationships.find_by_followed_id(other_user.id).destroy
   end
 
+
+  def unseen_messages
+    self.mensajes.where("seen = ?",false)
+  end
 
   #def skills
   #  self.vacantes.all.each { |v| v.tags(:skills) }

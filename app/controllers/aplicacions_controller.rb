@@ -11,11 +11,21 @@ class AplicacionsController < ApplicationController
 
     authorize! :create, @aplicacion
 
+
+    @mensaje = Mensaje.new
+    @mensaje.user = @vacante.user
+    @mensaje.content = "El practicante  #{@user.nombre} a aplicado a tu vacante #{@vacante.titulo}"
+    @mensaje.seen = false
+    @mensaje.save
+
     if @aplicacion.save
       respond_to do |format|
         format.html { redirect_to @vacante, notice: 'Aplicando a Vacante' }
       end
-      #Notificacion -> Empresa
+    else
+      respond_to do |format|
+        format.html { redirect_to @vacante, notice: 'Ya has aplicado a esta vacante' }
+      end
     end
   end
 
@@ -29,11 +39,20 @@ class AplicacionsController < ApplicationController
     @practicante.status = "ocupado"
     @practicante.save
 
+    @mensaje = Mensaje.new
+    @mensaje.user = @vacante.user
+    @mensaje.content = "La empresa #{@vacante.user.nombre} ha aceptado tu aplicacion a la vacante #{@vacante.titulo}"
+    @mensaje.seen = false
+    @mensaje.save
+
     if @aplicacion.save
       respond_to do |format|
         format.html { redirect_to @vacante, notice: 'Practicante Aceptado' }
       end
-      #Notificacion -> Practicante
+    else
+      respond_to do |format|
+        format.html { redirect_to @vacante, notice: 'Este practicante ya ha sido aceptado' }
+      end
     end
   end
 
