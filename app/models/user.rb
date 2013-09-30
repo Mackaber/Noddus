@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable #, :confirmable
 
+
   acts_as_taggable # :habilidades
 
   # Setup accessible (or protected) attributes for your model

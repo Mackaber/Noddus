@@ -4,4 +4,9 @@ class MainController < ApplicationController
       format.html # index.html.erb
     end
   end
+
+  def thelanding
+  	
+  end
+
 end

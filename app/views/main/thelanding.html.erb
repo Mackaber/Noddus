@@ -1,0 +1,131 @@
+<% if flash[:notice] %>
+  <script>
+    alert('<%= flash[:notice] %>');
+  </script>
+<% end %>
+
+<div class="row" id="uno">
+  <div class="container">
+    <!--LOGO y MENU-->
+    <div id="span-logo" class="col-lg-4">
+      <div id="logo-container">
+        <img id="logo" src="/assets/img//logo_noddus.png" />
+      </div>
+    </div>
+    <div id="span-nav" class="col-lg-8">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">TOUR</a></li>
+        <!-- <li><a href="#">BENEFICIOS</a></li> -->
+        <li><a href="http://noddus.tumblr.com/">BLOG</a></li>
+        <li><a href="http://noddus.tumblr.com/contacto">CONTACTO</a></li>
+        <li><a href="https://twitter.com/nodd_us"><img src="/assets/img//twitter.png" style="width: 20px;" /></a></li>
+        <li><a href="https://www.facebook.com/noddusweb"><img src="/assets/img//facebook.png" style="width: 13px;" /></a></li>
+        <li><a href="mailto:contacto@nodd.us"><img src="/assets/img//mail.png" style="width: 20px;" /></a></li>
+        <!-- <li><a href="#"><img src="/assets/img//login.png" style="width: 25px;" />ENTRAR</a></li> -->
+      </ul>
+    </div>
+    <!-- /LOGO y MENU-->
+    <!--VIDEO-->
+    <div class="col-lg-12">
+      <div id="videoyoutube">
+        <img id="video" src="/assets/img//youtube.png" />
+      </div>
+    </div>
+    <!--/VIDEO-->
+    <!--QUE HACEMOS-->
+    <div id="span-pregunta" class="col-lg-12" style="font-size: 26px;">
+      &iquest;Qu&eacute; hacemos?
+    </div>
+    <div id="span-que-hacemos"class="col-lg-12" style="font-size: 26px;">
+      <ul class="" id="hacemos">
+        <li><a href="#"><img src="/assets/img//hacemos/hacemos1.png"></a></li>
+        <li><a href="#"><img src="/assets/img//hacemos/hacemos2.png"></a></li>
+        <li><a href="#"><img src="/assets/img//hacemos/hacemos3.png"></a></li>
+        <li><a href="#"><img src="/assets/img//hacemos/hacemos4.png"></a></li>
+        <li><a href="#"><img src="/assets/img//hacemos/hacemos5.png"></a></li>
+        <li><a href="#"><img src="/assets/img//hacemos/hacemos6.png"></a></li>
+        <li><a href="#"><img src="/assets/img//hacemos/hacemos7.png"></a></li>
+        <!-- ... -->
+      </ul>
+    </div>
+  </div>
+  <!--/QUE HACEMOS-->
+</div>
+<div class="row" id="dos">
+  <img id="rocket" src="/assets/img//rocket.png" style=/>
+  <p id="registro" style="font-size:26px;">Ajuste su cintur&oacute;n, estamos por despegar</p><br>
+  <p id="registro" style="font-size:18px;">
+    Reg&iacute;strate ahora y s&eacute; parte del pr&oacute;ximo lanzamiento</p>
+  <!--         <img id="rocket" src="/assets/img//email.png" /> -->
+
+  <%= form_tag("/registrarmail", method: "post" ) do %>
+    <%= text_field_tag(:mail," ",:class => "span4 offset4 niceinput", :type => "email") %>
+    <%= submit_tag("", :class => "checkbutton") %>
+  <% end %>
+<!--   <input class="span4 offset4 niceinput" style="margin-left: 450px;" type="text" />
+  <button class="checkbutton" ></button> -->
+</div>
+
+<div class="row" id="tres">
+  <img id="mosaico" src="/assets/img//fotos_mosa.png" />
+  <div id="caracteristica" class="col-lg-6">
+    <h1>Conecta</h1>
+    Crea tu perfil de acuerdo a tus habilidades y tus estudios. Sube tu portafolio universitario y comienza a conectarte con empresas que est&aacute;n interesadas en ti.
+  </div>
+</div>
+
+<div class="row" id="cuatro">
+  <div id="caracteristica2" class="col-lg-6">
+    <h1>Descubre</h1>
+    Tus habilidades son lo m&aacute;s importante. Encuentra vacantes para hacer tus pr&aacute;cticas profesionales de acuerdo a ellas.
+  </div>
+  <img id="app_view" src="/assets/img//app_view.png" />
+</div>
+
+<div class="row" id="cinco">
+  <img id="mosaico" src="/assets/img//logos_mosa.png" />
+  <div id="caracteristica" class="col-lg-6">
+    <h1>Demuestra</h1>
+    Cada d&iacute;a se unen m&aacute;s empresas a la plataforma esperando a su practicante ideal, &iquest;Tienes lo que se requiere?
+  </div>
+</div>
+
+<div class="row" id="seis">
+  <div id="caracteristica4" class="col-lg-6">
+    <h1>Busca</h1>
+    Si eres empresa, buscar candidatos jam&aacute;s hab&iacute;a sido tan f&aacute;cil. Ahorra tiempo y esfuerzo mientras nosotros te conectamos.
+  </div>
+  <img id="iconos_" src="/assets/img//iconos.png" />
+</div>
+
+<div class="row" id="siete">
+  <div id="caracteristica7" class="col-lg-12">
+    Al registrarte conseguir&aacute;s estos superpoderes
+  </div>
+  <div id="beneficios" class="row">
+    <div id="categoria" class="col-lg-6">
+      <div class="row"><img src="/assets/img//ninja_txt.png"></div>
+      <div class="row">
+        1. Encuentra al candidato id&oacute;neo para el perfil de la vacante por medio de la conexi&oacute;n de habilidades. Esto nos permite contactar r&aacute;pidamente con tu practicante ideal.<br>
+        2. Control total sobre la b&uacute;squeda y conexi&oacute;n con practicantes.<br>
+        3. Realiza entrevistas por videollamada<br>
+      </div>
+    </div>
+    <div id="categoria" class="col-lg-6">
+      <div class="row"><img src="/assets/img//ninja_txt.png"></div>
+      <div class="row">
+        1. Encontrar una vacante que sea &oacute;ptima de acuerdo a tu perfil.<br>
+        2. Obtienen el Certificado Nodus al finalizar y dale valor curricular a tu trabajo durante las pr&aacute;cticas profesionales.<br>
+        3. Sube tu CV y portafolio para que las empresas puedan verlo.<br>
+      </div>
+    </div>
+    <div id="categoria" class="col-lg-6">
+      <div class="row"><img src="/assets/img//ninja_txt.png"></div>
+      <div class="row">
+        1. Administra a tus alumnos de una manera f&aacute;cil.<br>
+        2. Realiza convenios con m&aacute;s empresas para conectar a tus estudiantes.<br>
+        3. Conoce con mayor precisi&oacute;n el impacto de tus modelos de estudio. <br>
+      </div>
+    </div>
+  </div>
+</div>
