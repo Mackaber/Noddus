@@ -6,7 +6,7 @@ class VacantesController < ApplicationController
     #A la empresa solo se le muestran sus propias vacantes
     if current_user.rol == "Empresa"
       @vacantes = current_user.vacantes
-    else
+    elsif current_user.rol == "Practicante"
       if params[:tag]
         @vacantes = Vacante.tagged_with(params[:tag])
       else
@@ -15,6 +15,10 @@ class VacantesController < ApplicationController
       respond_to do |format|
         format.html # index.html.erb
         format.json { render json: @vacantes }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to root_url, notice: 'Necesitas Ingresar para tener acceso a las Vacantes' }
       end
     end
   end
@@ -54,7 +58,7 @@ class VacantesController < ApplicationController
 
     respond_to do |format|
       if @vacante.save
-        format.html { redirect_to @vacante, notice: 'Vacante was successfully created.' }
+        format.html { redirect_to @vacante, notice: 'Tu Vacante ha sido creada' }
         format.json { render json: @vacante, status: :created, location: @vacante }
       else
         format.html { render action: "new" }
@@ -70,7 +74,7 @@ class VacantesController < ApplicationController
 
     respond_to do |format|
       if @vacante.update_attributes(params[:vacante])
-        format.html { redirect_to @vacante, notice: 'Vacante was successfully updated.' }
+        format.html { redirect_to @vacante, notice: 'Tu vacante ha sido actualizada satisfactoriamente' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
